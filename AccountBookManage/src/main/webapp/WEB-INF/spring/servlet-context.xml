@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- Uncomment and your base-package here:
+         <context:component-scan
+            base-package="org.springframework.samples.web"/>  -->
+
+
+    <mvc:annotation-driven />
+	<context:component-scan base-package="com.msw" />
+
+	<!-- 폴더 경로 설정 -->
+	<mvc:resources mapping="/css/**" location="/css/" />
+	<mvc:resources mapping="/js/**" location="/js/" />
+	<mvc:resources mapping="/img/**" location="/img/" />
+	<mvc:resources mapping="/fonts/**" location="/fonts/" />
+	
+	<bean id="beanNameViewResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver">
+		<property name="order" value="0" />
+	</bean>
+
+	<!-- view 경로 설정 -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+	        <!-- Example: a logical view name of 'showMessage' is mapped to '/WEB-INF/jsp/showMessage.jsp' -->
+	        <property name="prefix" value="/WEB-INF/view/"/>
+	        <property name="suffix" value=".jsp"/>
+	        <property name="order" value="1"/>
+	</bean>
+	
+	<!-- JSON 설정 -->
+	<bean name="jsonView" class="org.springframework.web.servlet.view.json.MappingJacksonJsonView" >
+       <property name="contentType" value="application/json;charset=UTF-8" />
+    </bean>
+    
+    <!-- 인터셉터 설정 -->
+    <!-- 향후 설정을 넣어 추가할 예정
+    <mvc:interceptors>
+	    <mvc:interceptor> 
+	   	   <mvc:mapping path="/room/*.do"/>
+	   	   <mvc:mapping path="/chat/*.do"/>
+	   	   <mvc:mapping path="/info/*.do"/>
+	       <bean class="com.chat.interceptor.InterCeptor"/>
+	    </mvc:interceptor>
+	</mvc:interceptors>
+	 -->
+
+</beans>
