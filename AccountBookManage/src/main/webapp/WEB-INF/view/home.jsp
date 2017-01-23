@@ -24,6 +24,7 @@
 	<script type="text/javascript" src="./js/common/index.js"></script>
 	<link href="./css/common.css" rel="stylesheet" type="text/css">
     <link href="./css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="./css/font-awesome.min.css" rel="stylesheet" type="text/css">
   </head>
   
   <body>
@@ -41,7 +42,7 @@
         <div class="collapse navbar-collapse" id="navbar-ex-collapse">
           <ul class="nav navbar-nav navbar-right">
             <li class="active">
-              <a href="#">Home</a>
+              <a href="#"><i class="fa fa-home"></i> Home</a>
             </li>
             <li>
               <a href="#">Contacts</a>
