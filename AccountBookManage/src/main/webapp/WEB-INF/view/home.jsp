@@ -19,7 +19,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="text/javascript" src="./js/common/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="./js/common/jquery-2.0.3.min.js"></script>
     <script type="text/javascript" src="./js/common/bootstrap.min.js"></script>
 	<script type="text/javascript" src="./js/common/index.js"></script>
 	<link href="./css/common.css" rel="stylesheet" type="text/css">
@@ -53,7 +53,7 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-3 col-lg-2">
-          <h3>출금관리</h3>
+          <h3 class="text-primary">출금관리</h3>
           <nav class="navbar navbar-default navbar-fixed-side">
             <!-- normal collapsible navbar markup -->
             <ol class="list-unstyled col-md-12 bottom_padding_10 top_padding_10">
@@ -68,7 +68,7 @@
           <div class="section">
             <div class="container">
               <div class="row">
-                <div class="col-md-12"></div>
+                <div class="col-md-12">임시컨텐츠 영역1</div>
               </div>
             </div>
           </div>
