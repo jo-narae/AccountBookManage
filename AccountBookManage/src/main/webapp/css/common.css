@@ -1,4 +1,5 @@
 @CHARSET "EUC-KR";
+@import url(http://fonts.googleapis.com/earlyaccess/nanumbrushscript.css);
 
 /* Basic reset */
 * {
@@ -17,6 +18,103 @@ html {
 	height: 100%;
 	background: white;
 	background-size: cover;
+}
+
+/* 한글 글꼴 나눔 적용 : 조나래 */
+body {
+	font-family: 'Nanum Brush Script', Helvetica, Arial, sans-serif;
+}
+
+
+/* 공통 padding START : 조나래 */
+.top_padding_10 {
+	padding-top : 10px;
+}
+
+.bottom_padding_10 {
+	padding-bottom : 10px;
+}
+
+.left_padding_10 {
+	padding-left : 10px;
+}
+
+.right_padding_10 {
+	padding-right : 10px;
+}
+
+.padding_10 {
+	padding : 10px;
+}
+
+.top_padding_5 {
+	padding-top : 5px;
+}
+
+.bottom_padding_5 {
+	padding-bottom : 5px;
+}
+
+.left_padding_5 {
+	padding-left : 5px;
+}
+
+.right_padding_5 {
+	padding-right : 5px;
+}
+
+.padding_5 {
+	padding : 5px;
+}
+
+/* 공통 padding END : 조나래 */
+
+
+/* 공통 margin START : 조나래 */
+.top_margin_10 {
+	margin-top : 10px;
+}
+
+.bottom_margin_10 {
+	margin-bottom : 10px;
+}
+
+.left_margin_10 {
+	margin-left : 10px;
+}
+
+.right_margin_10 {
+	margin-right : 10px;
+}
+
+.margin_10 {
+	margin : 10px;
+}
+
+.top_margin_5 {
+	margin-top : 5px;
+}
+
+.bottom_margin_5 {
+	margin-bottom : 5px;
+}
+
+.left_margin_5 {
+	margin-left : 5px;
+}
+
+.right_margin_5 {
+	margin-right : 5px;
+}
+
+.margin_5 {
+	margin : 5px;
+}
+
+/* 공통 margin END : 조나래 */
+
+ol li {
+	margin-top : 5px;
 }
 
 /* Using box shadows to create 3D effects */

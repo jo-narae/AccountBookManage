@@ -56,10 +56,11 @@
           <h3>출금관리</h3>
           <nav class="navbar navbar-default navbar-fixed-side">
             <!-- normal collapsible navbar markup -->
-            <ul>
-              <li>출금목록</li>
-              <li>신청목록</li>
-            </ul>
+            <ol class="list-unstyled col-md-12 bottom_padding_10 top_padding_10">
+              <li>출금관리</li>
+              <li>입금관리</li>
+              <li>장부관리</li>
+            </ol>
           </nav>
         </div>
         <div class="col-sm-9 col-lg-10">
