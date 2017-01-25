@@ -24,9 +24,9 @@ public class NaraeController {
 	 * 내정보 화면
 	 * @return
 	 */
-	@RequestMapping("user/userJoin.do")
+	@RequestMapping("user/userLogin.do")
 	public ModelAndView myInfo() {
-		ModelAndView mv = new ModelAndView("/user/userJoin");
+		ModelAndView mv = new ModelAndView("/user/userLogin");
 
 		return mv;
 	}
