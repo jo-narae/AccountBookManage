@@ -44,14 +44,15 @@
     </div>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-3 col-lg-2">
+       <div class="col-sm-3 col-lg-2">
           <h3 class="text-primary">
-            <i class="fa fa-home"></i>Home</h3>
+            <i class="fa fa-calculator"></i>입/출금 관리</h3>
           <nav class="navbar navbar-default navbar-fixed-side">
             <!-- normal collapsible navbar markup -->
             <ol class="list-unstyled col-md-12 bottom_padding_10 top_padding_10">
-              <li>로그인</li>
-              <li>회원가입</li>
+              <li>입금 관리</li>
+              <li>출금 관리</li>
+              <li>신청 목록</li>
             </ol>
           </nav>
         </div>
@@ -70,42 +71,45 @@
               </h3>
               <div class="row">
                 <div class="col-md-12">
-          <table class="table">
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>이름</th>
-                <th>내역</th>
-                <th>금액</th>
-                <th>날짜</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>1</td>
-                <td>함민정</td>
-                <td>회비</td>
-                <td>2000</td>
-                <td>2017/1/17</td>
-              </tr>
-              <tr>
-                <td>2</td>
-                <td>조나래</td>
-                <td>회식비</td>
-                <td>3000</td>
-                <td>2017/1/17</td>
-              </tr>
-              <tr>
-                <td>3</td>
-                <td>아무개</td>
-                <td>선물</td>
-                <td>4000</td>
-                <td>2017/1/17</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>이름</th>
+                        <th>내역</th>
+                        <th>금액</th>
+                        <th>날짜</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>함민정</td>
+                        <td>회비</td>
+                        <td>2000</td>
+                        <td>2017/1/17</td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>조나래</td>
+                        <td>회식비</td>
+                        <td>3000</td>
+                        <td>2017/1/17</td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>아무개</td>
+                        <td>선물</td>
+                        <td>4000</td>
+                        <td>2017/1/17</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
               </div>
+              <div class="text-right">
+            	<a href="#" class="btn btn-primary">입력</a>
+          	  </div>
             </div>
           </div>
         </div>
