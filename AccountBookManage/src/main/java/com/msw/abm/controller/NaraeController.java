@@ -19,9 +19,15 @@ public class NaraeController {
 	 * @return
 	 */
 	@RequestMapping("user/userLogin.do")
-	public ModelAndView myInfo() {
-		//테스트 주석 넣고 commit 하겠습니다!
+	public ModelAndView testUI1() {
 		ModelAndView mv = new ModelAndView("/user/userLogin");
+
+		return mv;
+	}
+	
+	@RequestMapping("user/userJoinApply.do")
+	public ModelAndView testUI2() { 
+		ModelAndView mv = new ModelAndView("/user/userJoinApply");
 
 		return mv;
 	}

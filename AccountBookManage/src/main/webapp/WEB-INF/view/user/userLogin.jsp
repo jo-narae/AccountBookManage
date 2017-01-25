@@ -76,7 +76,7 @@
                         <label for="inputEmail3" class="control-label">아이디</label>
                       </div>
                       <div class="col-sm-10">
-                        <input type="email" class="form-control" id="inputEmail3" placeholder="아이디를 입력해주세요.">
+                        <input type="text" class="form-control" id="inputEmail3" placeholder="아이디를 입력해주세요.">
                       </div>
                     </div>
                     <div class="form-group">
