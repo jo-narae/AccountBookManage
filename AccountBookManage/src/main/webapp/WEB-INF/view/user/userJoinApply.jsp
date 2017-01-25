@@ -30,7 +30,7 @@
         <div class="collapse navbar-collapse" id="navbar-ex-collapse">
           <ul class="nav navbar-nav navbar-right">
             <li class="active">
-              <a href="#"><i class="fa fa-home"></i> Home1</a>
+              <a href="#"><i class="fa fa-home"></i> Home</a>
             </li>
             <li>
               <a href="#"><i class="fa fa-user"></i> MyPage</a>
