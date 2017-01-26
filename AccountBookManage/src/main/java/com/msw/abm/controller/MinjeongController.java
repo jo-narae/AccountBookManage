@@ -15,7 +15,7 @@ public class MinjeongController {
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
 	
 	/**
-	 * 내정보 화면1
+	 * 내정보 화면
 	 * @return
 	 */
 	@RequestMapping("deposit/depositList.do")
