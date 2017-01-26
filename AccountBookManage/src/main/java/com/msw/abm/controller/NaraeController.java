@@ -46,4 +46,11 @@ public class NaraeController {
 		return mv;
 	}
 	
+	@RequestMapping("user/authorityManage.do")
+	public ModelAndView testUI5() { 
+		ModelAndView mv = new ModelAndView("/user/authorityManage");
+
+		return mv;
+	}
+	
 }
