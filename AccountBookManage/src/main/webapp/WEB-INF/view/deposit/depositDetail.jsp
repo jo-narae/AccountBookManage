@@ -59,12 +59,13 @@
             <div class="container">
               <ul class="breadcrumb">
                 <li>
-                  <a href="#">출/입금관리</a>
+                   <a href="#">출/입금관리</a>
                 </li>
                 <li>입금 관리</li>
+                <li>입금내역 상세정보</li>
               </ul>
               <h3 class="text-primary">
-                <b>입금</b>
+                <b>입금내역 상세정보</b>
               </h3>
               <div class="row">
                 <div class="col-md-12">
