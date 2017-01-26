@@ -20,7 +20,7 @@ public class NaraeController {
 	 */
 	@RequestMapping("user/userLogin.do")
 	public ModelAndView testUI1() {
-		ModelAndView mv = new ModelAndView("/user/userLogin");
+		ModelAndView mv = new ModelAndView("user/userLogin");
 
 		return mv;
 	}

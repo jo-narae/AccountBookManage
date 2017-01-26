@@ -29,12 +29,21 @@
 	        <!-- Example: a logical view name of 'showMessage' is mapped to '/WEB-INF/jsp/showMessage.jsp' -->
 	        <property name="prefix" value="/WEB-INF/view/"/>
 	        <property name="suffix" value=".jsp"/>
-	        <property name="order" value="1"/>
+	        <property name="order" value="2"/>
 	</bean>
 	
 	<!-- JSON 설정 -->
 	<bean name="jsonView" class="org.springframework.web.servlet.view.json.MappingJacksonJsonView" >
        <property name="contentType" value="application/json;charset=UTF-8" />
+    </bean>
+    
+    <!-- tiles3 설정 -->
+    <bean class="org.springframework.web.servlet.view.tiles3.TilesViewResolver">
+        <property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView"/>
+        <property name="order" value="1"/>
+    </bean>
+    <bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+        <property name="definitions" value="/WEB-INF/spring/tiles.xml"/>
     </bean>
     
     <!-- 인터셉터 설정 -->
