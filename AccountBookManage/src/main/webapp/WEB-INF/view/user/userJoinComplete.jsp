@@ -63,37 +63,20 @@
                 <li>
                   <a href="#">Home</a>
                 </li>
-                <li>로그인</li>
+                <li>회원가입</li>
+                <li>회원가입 완료</li>
               </ul>
               <h3 class="text-primary">
-                <b>로그인</b>
+                <b>회원가입 완료</b>
               </h3>
               <div class="row">
-                <div class="col-md-12">
-                  <form class="form-horizontal" role="form">
-                    <div class="form-group">
-                      <div class="col-sm-2">
-                        <label for="inputEmail3" class="control-label">아이디</label>
-                      </div>
-                      <div class="col-sm-10">
-                        <input type="email" class="form-control" id="inputEmail3" placeholder="아이디를 입력해주세요.">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <div class="col-sm-2">
-                        <label for="inputPassword3" class="control-label">비밀번호</label>
-                      </div>
-                      <div class="col-sm-10">
-                        <input type="password" class="form-control" id="inputPassword3" placeholder="비밀번호를 입력해주세요.">
-                      </div>
-                    </div>
-                    <div>
-                      <button type="submit" class="btn btn-primary col-sm-12" style="margin-bottom:5px;">로그인</button>
-                      <button type="submit" class="btn btn-default col-sm-12" style="margin-bottom:5px;">회원가입</button>
-                      <button type="submit" class="btn btn-default col-sm-6">아이디 찾기</button>
-                      <button type="submit" class="btn btn-default col-sm-6">비밀번호 찾기</button>
-                    </div>
-                  </form>
+                <div class="col-md-12 text-center">
+                  <div class="thumbnail">
+	                <img src="../img/join.jpg"><br />
+	                	조나래님 회원가입을 진심으로 축하드립니다.<br />
+	               		로그인 후 서비스 이용이 가능합니다. 감사합니다.<br />
+	               		<a class="btn btn-primary col-sm-12 top_margin_10">메인 페이지로</a>
+	              </div>
                 </div>
               </div>
             </div>

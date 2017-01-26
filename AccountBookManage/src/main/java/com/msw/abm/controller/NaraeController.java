@@ -39,4 +39,11 @@ public class NaraeController {
 		return mv;
 	}
 	
+	@RequestMapping("user/userJoinComplete.do")
+	public ModelAndView testUI4() { 
+		ModelAndView mv = new ModelAndView("/user/userJoinComplete");
+
+		return mv;
+	}
+	
 }
