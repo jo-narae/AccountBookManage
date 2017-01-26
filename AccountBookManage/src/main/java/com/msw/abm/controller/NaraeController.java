@@ -32,4 +32,11 @@ public class NaraeController {
 		return mv;
 	}
 	
+	@RequestMapping("user/userJoinInfo.do")
+	public ModelAndView testUI3() { 
+		ModelAndView mv = new ModelAndView("/user/userJoinInfo");
+
+		return mv;
+	}
+	
 }
