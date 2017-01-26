@@ -53,6 +53,13 @@ public class MinjeongController {
 		return mv;
 	}
 	
+	@RequestMapping("withdraw/withdrawApplyDetail.do")
+	public ModelAndView myInfo5() {
+		ModelAndView mv = new ModelAndView("/withdraw/withdrawApplyDetail");
+
+		return mv;
+	}
+	
 	
 	
 }
