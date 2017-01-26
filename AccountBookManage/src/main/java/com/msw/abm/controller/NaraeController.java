@@ -60,4 +60,11 @@ public class NaraeController {
 		return mv;
 	}
 	
+	@RequestMapping("accountbook/accountBookList.do")
+	public ModelAndView testUI7() { 
+		ModelAndView mv = new ModelAndView("/accountbook/accountBookList");
+
+		return mv;
+	}
+	
 }
