@@ -46,14 +46,7 @@
       <div class="row">
         <div class="col-sm-3 col-lg-2">
           <h3 class="text-primary">
-            <i class="fa fa-home"></i>Home</h3>
-          <nav class="navbar navbar-default navbar-fixed-side">
-            <!-- normal collapsible navbar markup -->
-            <ol class="list-unstyled col-md-12 bottom_padding_10 top_padding_10">
-              <li>로그인</li>
-              <li>회원가입</li>
-            </ol>
-          </nav>
+            <i class="fa fa-user"></i>My Page</h3>
         </div>
         <div class="col-sm-9 col-lg-10">
           <!-- your page content -->
@@ -61,37 +54,51 @@
             <div class="container">
               <ul class="breadcrumb">
                 <li>
-                  <a href="#">Home</a>
+                  <a href="#">My Page</a>
                 </li>
-                <li>로그인</li>
+                <li>내정보 보기 및 수정</li>
               </ul>
               <h3 class="text-primary">
-                <b>로그인</b>
+                <b>내정보 보기 및 수정</b>
               </h3>
               <div class="row">
                 <div class="col-md-12">
                   <form class="form-horizontal" role="form">
                     <div class="form-group">
                       <div class="col-sm-2">
-                        <label for="inputEmail3" class="control-label">아이디</label>
+                        <label class="control-label">이름</label>
+                      </div>
+                      <div class="col-sm-10">조나래</div>
+                    </div>
+                    <div class="form-group" draggable="true">
+                      <div class="col-sm-2">
+                        <label class="control-label">아이디</label>
+                      </div>
+                      <div class="col-sm-10">asuka0820</div>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-sm-2">
+                        <label class="control-label">연락처</label>
+                      </div>
+                      <div class="col-sm-10">010-4340-6004</div>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-sm-2">
+                        <label class="control-label">e-mail</label>
                       </div>
                       <div class="col-sm-10">
-                        <input type="email" class="form-control" id="inputEmail3" placeholder="아이디를 입력해주세요.">
+                        <input type="email" class="form-control" id="inputEmail3" placeholder="e-mail을 입력해주세요.">
                       </div>
                     </div>
                     <div class="form-group">
                       <div class="col-sm-2">
-                        <label for="inputPassword3" class="control-label">비밀번호</label>
+                        <label class="control-label">기수</label>
                       </div>
-                      <div class="col-sm-10">
-                        <input type="password" class="form-control" id="inputPassword3" placeholder="비밀번호를 입력해주세요.">
-                      </div>
+                      <div class="col-sm-10">11기</div>
                     </div>
                     <div>
-                      <button type="submit" class="btn btn-primary col-sm-12" style="margin-bottom:5px;">로그인</button>
-                      <button type="submit" class="btn btn-default col-sm-12" style="margin-bottom:5px;">회원가입</button>
-                      <button type="submit" class="btn btn-default col-sm-6">아이디 찾기</button>
-                      <button type="submit" class="btn btn-default col-sm-6">비밀번호 찾기</button>
+                      <button type="submit" class="btn btn-primary col-sm-6">내정보 수정</button>
+                      <button type="submit" class="btn btn-default col-sm-6">비밀번호 변경</button>
                     </div>
                   </form>
                 </div>

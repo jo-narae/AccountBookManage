@@ -53,4 +53,11 @@ public class NaraeController {
 		return mv;
 	}
 	
+	@RequestMapping("user/myPage.do")
+	public ModelAndView testUI6() { 
+		ModelAndView mv = new ModelAndView("/user/myPage");
+
+		return mv;
+	}
+	
 }
