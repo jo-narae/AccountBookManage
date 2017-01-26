@@ -25,7 +25,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#"><span>Brand1</span></a>
+          <a class="navbar-brand" href="#"><span>Brand</span></a>
         </div>
         <div class="collapse navbar-collapse" id="navbar-ex-collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -44,16 +44,9 @@
     </div>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-3 col-lg-2">
+       <div class="col-sm-3 col-lg-2">
           <h3 class="text-primary">
-            <i class="fa fa-home"></i>Home</h3>
-          <nav class="navbar navbar-default navbar-fixed-side">
-            <!-- normal collapsible navbar markup -->
-            <ol class="list-unstyled col-md-12 bottom_padding_10 top_padding_10">
-              <li>로그인</li>
-              <li>회원가입</li>
-            </ol>
-          </nav>
+            <i class="fa fa-cog"></i>권한관리</h3>
         </div>
         <div class="col-sm-9 col-lg-10">
           <!-- your page content -->
@@ -61,41 +54,47 @@
             <div class="container">
               <ul class="breadcrumb">
                 <li>
-                  <a href="#">Home</a>
+                  <a href="#">권한관리</a>
                 </li>
-                <li>로그인</li>
+                <li>회원관리 및 관리자 임명</li>
               </ul>
               <h3 class="text-primary">
-                <b>로그인</b>
+                <b>회원관리 및 관리자 임명</b>
               </h3>
               <div class="row">
                 <div class="col-md-12">
-                  <form class="form-horizontal" role="form">
-                    <div class="form-group">
-                      <div class="col-sm-2">
-                        <label for="inputEmail3" class="control-label">아이디</label>
-                      </div>
-                      <div class="col-sm-10">
-                        <input type="email" class="form-control" id="inputEmail3" placeholder="아이디를 입력해주세요.">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <div class="col-sm-2">
-                        <label for="inputPassword3" class="control-label">비밀번호</label>
-                      </div>
-                      <div class="col-sm-10">
-                        <input type="password" class="form-control" id="inputPassword3" placeholder="비밀번호를 입력해주세요.">
-                      </div>
-                    </div>
-                    <div>
-                      <button type="submit" class="btn btn-primary col-sm-12" style="margin-bottom:5px;">로그인</button>
-                      <button type="submit" class="btn btn-default col-sm-12" style="margin-bottom:5px;">회원가입</button>
-                      <button type="submit" class="btn btn-default col-sm-6">아이디 찾기</button>
-                      <button type="submit" class="btn btn-default col-sm-6">비밀번호 찾기</button>
-                    </div>
+                	<form class="form-horizontal" role="form">
+	                  <table class="table">
+	                    <thead>
+	                      <tr>
+	                        <th>선택</th>
+	                        <th>이름</th>
+	                        <th>기수</th>
+	                        <th>연락처</th>
+	                      </tr>
+	                    </thead>
+	                    <tbody>
+	                      <tr>
+	                        <td><input type="checkbox" name="chk_info" value="1"></td>
+	                        <td>함민정</td>
+	                        <td>12기</td>
+	                        <td>010-0000-0000</td>
+	                      </tr>
+	                      <tr>
+	                        <td><input type="checkbox" name="chk_info" value="2"></td>
+	                        <td>조나래</td>
+	                        <td>11기</td>
+	                        <td>010-1234-5678</td>
+	                      </tr>
+	                    </tbody>
+	                  </table>
                   </form>
                 </div>
               </div>
+              <div class="text-center">
+            	<a href="#" class="btn btn-primary">관리자 권한 위임</a>
+            	<a href="#" class="btn btn-default">회원 탈퇴</a>
+          	  </div>
             </div>
           </div>
         </div>
