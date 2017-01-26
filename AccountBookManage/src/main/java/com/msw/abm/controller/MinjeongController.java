@@ -39,6 +39,13 @@ public class MinjeongController {
 		return mv;
 	}
 	
+	@RequestMapping("withdraw/withdawMannageList.do")
+	public ModelAndView myInfo3() {
+		ModelAndView mv = new ModelAndView("/withdraw/withdawMannageList");
+
+		return mv;
+	}
+	
 	
 	
 }
