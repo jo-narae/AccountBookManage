@@ -62,12 +62,12 @@
             <div class="container">
               <ul class="breadcrumb">
                 <li>
-                  <a href="#">Home</a>
+                  <a href="#">입/출금 관리</a>
                 </li>
-                <li>로그인</li>
+                <li>입금 관리</li>
               </ul>
               <h3 class="text-primary">
-                <b>로그인</b>
+                <b>입금 관리</b>
               </h3>
               <div class="row">
                 <div class="col-md-12">
