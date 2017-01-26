@@ -80,13 +80,31 @@
                     </div>
                     <div class="form-group">
                       <div class="col-sm-2">
-                        <label for="inputPassword3" class="control-label">입금액</label>
+                        <label for="inputPassword3" class="control-label">내역</label>
                       </div>
                       <div class="col-sm-10">
-                        <input type="password" class="form-control" id="inputPassword3" placeholder="입금액을 입력해주세요.">
+                        <input type="password" class="form-control" id="inputPassword3" placeholder="입금 내역을 입력해주세요.">
                       </div>
                     </div>
                     <div>
+                      <div class="form-group">
+                        <div class="col-sm-2">
+                          <label for="inputPassword3" class="control-label">금액</label>
+                        </div>
+                        <div class="col-sm-10">
+                          <input type="password" class="form-control" id="inputPassword3" placeholder="입금액을 입력해주세요.">
+                        </div>
+                      </div>
+                      <div class="form-group">
+                        <div class="col-sm-2">
+                          <label for="inputPassword3" class="control-label">날짜</label>
+                        </div>
+                        <div class="col-sm-10">
+                          <input type="password" class="form-control" id="inputPassword3" placeholder="입금 날짜를 입력해주세요.">
+                        </div>
+                      </div>
+                      <div>
+                        <div>
                       <button type="submit" class="btn btn-primary col-sm-6">수정</button>
                       <button type="submit" class="btn btn-default col-sm-6">삭제</button>
                     </div>

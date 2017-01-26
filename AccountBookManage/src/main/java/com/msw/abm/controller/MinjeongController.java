@@ -18,11 +18,20 @@ public class MinjeongController {
 	 * 내정보 화면
 	 * @return
 	 */
+	@RequestMapping("deposit/depositList.do")
+	public ModelAndView myInfo1() {
+		ModelAndView mv = new ModelAndView("/deposit/depositList");
+
+		return mv;
+	}
+	
 	@RequestMapping("deposit/depositDetail.do")
 	public ModelAndView myInfo() {
 		ModelAndView mv = new ModelAndView("/deposit/depositDetail");
 
 		return mv;
 	}
+	
+	
 	
 }
