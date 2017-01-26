@@ -19,15 +19,22 @@ public class MinjeongController {
 	 * @return
 	 */
 	@RequestMapping("deposit/depositList.do")
-	public ModelAndView myInfo1() {
+	public ModelAndView myInfo() {
 		ModelAndView mv = new ModelAndView("/deposit/depositList");
 
 		return mv;
 	}
 	
 	@RequestMapping("deposit/depositDetail.do")
-	public ModelAndView myInfo() {
+	public ModelAndView myInfo1() {
 		ModelAndView mv = new ModelAndView("/deposit/depositDetail");
+
+		return mv;
+	}
+	
+	@RequestMapping("deposit/depositInput.do")
+	public ModelAndView myInfo2() {
+		ModelAndView mv = new ModelAndView("/deposit/depositInput");
 
 		return mv;
 	}
