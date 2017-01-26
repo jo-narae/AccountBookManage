@@ -67,4 +67,18 @@ public class NaraeController {
 		return mv;
 	}
 	
+	@RequestMapping("withdraw/withdrawApply.do")
+	public ModelAndView testUI8() { 
+		ModelAndView mv = new ModelAndView("/withdraw/withdrawApply");
+
+		return mv;
+	}
+	
+	@RequestMapping("withdraw/withdrawApplyModify.do")
+	public ModelAndView testUI9() { 
+		ModelAndView mv = new ModelAndView("/withdraw/withdrawApplyModify");
+
+		return mv;
+	}
+	
 }
