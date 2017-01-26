@@ -29,38 +29,13 @@
   
   <body class="cover-image" style="background-image : url('./img/cover.jpg')">
     <div class="cover">
-      <div class="navbar">
-        <div class="container">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
-              <span class="sr-only">Toggle navigation</span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#"><span class="text-inverse">Brand</span></a>
-          </div>
-          <div class="collapse navbar-collapse" id="navbar-ex-collapse">
-            <ul class="nav navbar-nav navbar-right">
-              <li class="active">
-                <a href="#"><span class="text-inverse"><i class="fa fa-home"></i> Home</span></a>
-              </li>
-              <li>
-                <a href="#"><span class="text-inverse"><i class="fa fa-user"></i> MyPage</span></a>
-              </li>
-              <li>
-                <a href="#"><span class="text-inverse"><i class="fa fa-cog"></i> 권한관리</span></a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
-            <h1 class="text-inverse">Account Book Manage</h1>
-            <p class="text-inverse">모바일소프트웨어학과의 장부관리 사이트입니다.</p><br />
-            <a class="btn btn-default" style="width:300px;">LOGIN</a>
+            <h1>Account Book Manage</h1>
+            <p>모바일소프트웨어학과의 장부관리 사이트입니다.</p>
+            <br>
+            <a class="btn btn-primary" style="width:800px;">시작하기</a>
           </div>
         </div>
       </div>
