@@ -59,7 +59,7 @@
             <div class="container">
               <ul class="breadcrumb">
                 <li>
-                  <a href="#">출/입금관리</a>
+                  <a href="#">입/출금관리</a>
                 </li>
                 <li>입금 관리</li>
                 <li>입금 등록</li>

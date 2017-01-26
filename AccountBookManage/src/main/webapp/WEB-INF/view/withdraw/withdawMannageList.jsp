@@ -63,10 +63,10 @@
                   <a href="#">입/출금 관리</a>
                 </li>
                 <li>출금 관리</li>
-                <li>출금 목록</li>
+                <li>출금 관리 목록</li>
               </ul>
               <h3 class="text-primary">
-                <b>출금 관리</b>
+                <b>출금 관리 목록</b>
               </h3>
               <div class="row">
                 <div class="col-md-12">
@@ -76,7 +76,6 @@
                         <td>
                           <input type="checkbox" name="chk_info" value="1">
                         </td>
-                        <th>#</th>
                         <th>이름</th>
                         <th>내역</th>
                         <th>금액</th>
@@ -88,9 +87,8 @@
                     <tbody>
                       <tr>
                         <td>
-                          <input type="checkbox" name="chk_info" value="1">
+                          <input type="checkbox" name="chk_info" value="2">
                         </td>
-                        <td>1</td>
                         <td>함민정</td>
                         <td>회비</td>
                         <td>2000</td>
@@ -100,9 +98,8 @@
                       </tr>
                       <tr>
                         <td>
-                          <input type="checkbox" name="chk_info" value="1">
+                          <input type="checkbox" name="chk_info" value="3">
                         </td>
-                        <td>2</td>
                         <td>조나래</td>
                         <td>회식비</td>
                         <td>3000</td>
@@ -112,9 +109,8 @@
                       </tr>
                       <tr>
                         <td>
-                          <input type="checkbox" name="chk_info" value="1">
+                          <input type="checkbox" name="chk_info" value="4">
                         </td>
-                        <td>3</td>
                         <td>아무개</td>
                         <td>선물</td>
                         <td>4000</td>

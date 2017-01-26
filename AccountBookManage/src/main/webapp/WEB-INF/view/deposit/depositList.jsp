@@ -65,9 +65,10 @@
                   <a href="#">입/출금 관리</a>
                 </li>
                 <li>입금 관리</li>
+                <li>입금 목록</li>
               </ul>
               <h3 class="text-primary">
-                <b>입금 관리</b>
+                <b>입금 목록</b>
               </h3>
               <div class="row">
                 <div class="col-md-12">

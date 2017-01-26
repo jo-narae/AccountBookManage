@@ -63,7 +63,7 @@
                 <li>
                   <a href="#">입/출금 관리</a>
                 </li>
-                <li>출금 관리</li>
+                <li>신청 목록</li>
                 <li>출금 신청</li>
               </ul>
               <h3 class="text-primary">
