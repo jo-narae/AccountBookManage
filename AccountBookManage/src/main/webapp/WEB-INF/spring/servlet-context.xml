@@ -36,14 +36,19 @@
 	<bean name="jsonView" class="org.springframework.web.servlet.view.json.MappingJacksonJsonView" >
        <property name="contentType" value="application/json;charset=UTF-8" />
     </bean>
-    
+
     <!-- tiles3 설정 -->
     <bean class="org.springframework.web.servlet.view.tiles3.TilesViewResolver">
         <property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView"/>
         <property name="order" value="1"/>
     </bean>
     <bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
-        <property name="definitions" value="/WEB-INF/spring/tiles.xml"/>
+        <property name="definitions">
+		<list>
+		 <value>/WEB-INF/spring/tiles.xml</value>
+		</list>
+		</property>
+		<property name="preparerFactoryClass" value="org.springframework.web.servlet.view.tiles3.SimpleSpringPreparerFactory" />
     </bean>
     
     <!-- 인터셉터 설정 -->

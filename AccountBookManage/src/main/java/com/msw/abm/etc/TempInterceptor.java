@@ -1,4 +1,4 @@
-package com.msw.abm.interceptor;
+package com.msw.abm.etc;
 
 public class TempInterceptor {
 
