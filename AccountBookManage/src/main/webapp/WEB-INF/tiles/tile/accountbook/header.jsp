@@ -12,11 +12,17 @@
   </div>
   <div class="collapse navbar-collapse" id="navbar-ex-collapse">
     <ul class="nav navbar-nav navbar-right">
-      <li class="active">
+      <li>
         <a href="#"><i class="fa fa-home"></i> Home</a>
       </li>
       <li>
-        <a href="#"><i class="fa fa-user"></i> MyPage</a>
+        <a href="#"><i class="fa fa-calculator"></i> 입/출금 관리</a>
+      </li>
+      <li class="active">
+        <a href="#"><i class="fa fa-address-book-o"></i> 금전출납부</a>
+      </li>
+      <li>
+        <a href="#"><i class="fa fa-use"></i> MyPage</a>
       </li>
       <li>
         <a href="#"><i class="fa fa-cog"></i> 권한관리</a>

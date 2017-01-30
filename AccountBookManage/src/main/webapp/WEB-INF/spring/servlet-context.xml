@@ -26,7 +26,6 @@
 
 	<!-- view 경로 설정 -->
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-	        <!-- Example: a logical view name of 'showMessage' is mapped to '/WEB-INF/jsp/showMessage.jsp' -->
 	        <property name="prefix" value="/WEB-INF/view/"/>
 	        <property name="suffix" value=".jsp"/>
 	        <property name="order" value="2"/>
@@ -38,18 +37,20 @@
     </bean>
 
     <!-- tiles3 설정 -->
-    <bean class="org.springframework.web.servlet.view.tiles3.TilesViewResolver">
-        <property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView"/>
-        <property name="order" value="1"/>
-    </bean>
-    <bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
-        <property name="definitions">
-		<list>
-		 <value>/WEB-INF/spring/tiles.xml</value>
-		</list>
+	<bean class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+		<!--Don't add suffix or prefix like you do with .jsp files -->
+		<property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView" />
+		<property name="order" value="1"/>
+			
+	</bean>
+	<bean id="tilesConfigurer"
+		class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+		<property name="definitions">
+			<list>
+				<value>/WEB-INF/spring/tiles.xml</value>
+			</list>
 		</property>
-		<property name="preparerFactoryClass" value="org.springframework.web.servlet.view.tiles3.SimpleSpringPreparerFactory" />
-    </bean>
+	</bean>
     
     <!-- 인터셉터 설정 -->
     <!-- 향후 설정을 넣어 추가할 예정

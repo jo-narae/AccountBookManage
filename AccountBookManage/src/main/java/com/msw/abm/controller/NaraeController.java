@@ -27,56 +27,56 @@ public class NaraeController {
 	
 	@RequestMapping("user/userJoinApply.do")
 	public ModelAndView testUI2() { 
-		ModelAndView mv = new ModelAndView("/user/userJoinApply");
+		ModelAndView mv = new ModelAndView("user/userJoinApply");
 
 		return mv;
 	}
 	
 	@RequestMapping("user/userJoinInfo.do")
 	public ModelAndView testUI3() { 
-		ModelAndView mv = new ModelAndView("/user/userJoinInfo");
+		ModelAndView mv = new ModelAndView("user/userJoinInfo");
 
 		return mv;
 	}
 	
 	@RequestMapping("user/userJoinComplete.do")
 	public ModelAndView testUI4() { 
-		ModelAndView mv = new ModelAndView("/user/userJoinComplete");
+		ModelAndView mv = new ModelAndView("user/userJoinComplete");
 
 		return mv;
 	}
 	
-	@RequestMapping("user/authorityManage.do")
+	@RequestMapping("authority/authorityManage.do")
 	public ModelAndView testUI5() { 
-		ModelAndView mv = new ModelAndView("/user/authorityManage");
+		ModelAndView mv = new ModelAndView("authority/authorityManage");
 
 		return mv;
 	}
 	
-	@RequestMapping("user/myPage.do")
+	@RequestMapping("mypage/myPage.do")
 	public ModelAndView testUI6() { 
-		ModelAndView mv = new ModelAndView("/user/myPage");
+		ModelAndView mv = new ModelAndView("mypage/myPage");
 
 		return mv;
 	}
 	
 	@RequestMapping("accountbook/accountBookList.do")
 	public ModelAndView testUI7() { 
-		ModelAndView mv = new ModelAndView("/accountbook/accountBookList");
+		ModelAndView mv = new ModelAndView("accountbook/accountBookList");
 
 		return mv;
 	}
 	
 	@RequestMapping("withdraw/withdrawApply.do")
 	public ModelAndView testUI8() { 
-		ModelAndView mv = new ModelAndView("/withdraw/withdrawApply");
+		ModelAndView mv = new ModelAndView("withdraw/withdrawApply");
 
 		return mv;
 	}
 	
 	@RequestMapping("withdraw/withdrawApplyModify.do")
 	public ModelAndView testUI9() { 
-		ModelAndView mv = new ModelAndView("/withdraw/withdrawApplyModify");
+		ModelAndView mv = new ModelAndView("withdraw/withdrawApplyModify");
 
 		return mv;
 	}

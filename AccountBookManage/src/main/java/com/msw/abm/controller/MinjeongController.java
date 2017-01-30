@@ -20,42 +20,42 @@ public class MinjeongController {
 	 */
 	@RequestMapping("deposit/depositList.do")
 	public ModelAndView myInfo() {
-		ModelAndView mv = new ModelAndView("/deposit/depositList");
+		ModelAndView mv = new ModelAndView("deposit/depositList");
 
 		return mv;
 	}
 	
 	@RequestMapping("deposit/depositDetail.do")
 	public ModelAndView myInfo1() {
-		ModelAndView mv = new ModelAndView("/deposit/depositDetail");
+		ModelAndView mv = new ModelAndView("deposit/depositDetail");
 
 		return mv;
 	}
 	
 	@RequestMapping("deposit/depositInput.do")
 	public ModelAndView myInfo2() {
-		ModelAndView mv = new ModelAndView("/deposit/depositInput");
+		ModelAndView mv = new ModelAndView("deposit/depositInput");
 
 		return mv;
 	}
 	
 	@RequestMapping("withdraw/withdawMannageList.do")
 	public ModelAndView myInfo3() {
-		ModelAndView mv = new ModelAndView("/withdraw/withdawMannageList");
+		ModelAndView mv = new ModelAndView("withdraw/withdawMannageList");
 
 		return mv;
 	}
 	
 	@RequestMapping("withdraw/withdrawApplyList.do")
 	public ModelAndView myInfo4() {
-		ModelAndView mv = new ModelAndView("/withdraw/withdrawApplyList");
+		ModelAndView mv = new ModelAndView("withdraw/withdrawApplyList");
 
 		return mv;
 	}
 	
 	@RequestMapping("withdraw/withdrawApplyDetail.do")
 	public ModelAndView myInfo5() {
-		ModelAndView mv = new ModelAndView("/withdraw/withdrawApplyDetail");
+		ModelAndView mv = new ModelAndView("withdraw/withdrawApplyDetail");
 
 		return mv;
 	}

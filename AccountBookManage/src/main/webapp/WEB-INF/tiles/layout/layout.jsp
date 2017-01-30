@@ -29,7 +29,6 @@
           <!-- your page content -->
           <div class="section">
             <div class="container">
-              <tiles:insertAttribute name="titlenav" />
               <tiles:insertAttribute name="contents" />
             </div>
           </div>
