@@ -21,6 +21,7 @@ public class NaraeController {
 	@RequestMapping("user/userLogin.do")
 	public ModelAndView testUI1() {
 		ModelAndView mv = new ModelAndView("user/userLogin");
+		mv.addObject("active_menu", "mypage");
 
 		return mv;
 	}
