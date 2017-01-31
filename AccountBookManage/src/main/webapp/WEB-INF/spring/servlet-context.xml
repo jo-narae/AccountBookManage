@@ -51,17 +51,5 @@
 			</list>
 		</property>
 	</bean>
-    
-    <!-- 인터셉터 설정 -->
-    <!-- 향후 설정을 넣어 추가할 예정
-    <mvc:interceptors>
-	    <mvc:interceptor> 
-	   	   <mvc:mapping path="/room/*.do"/>
-	   	   <mvc:mapping path="/chat/*.do"/>
-	   	   <mvc:mapping path="/info/*.do"/>
-	       <bean class="com.chat.interceptor.InterCeptor"/>
-	    </mvc:interceptor>
-	</mvc:interceptors>
-	 -->
 
 </beans>
