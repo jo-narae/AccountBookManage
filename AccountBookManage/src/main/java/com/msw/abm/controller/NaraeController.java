@@ -21,7 +21,7 @@ public class NaraeController {
 	@RequestMapping("user/userLogin.do")
 	public ModelAndView testUI1() {
 		ModelAndView mv = new ModelAndView("user/userLogin");
-		mv.addObject("active_menu", "mypage");
+		mv.addObject("active_menu", "user");
 
 		return mv;
 	}
@@ -29,6 +29,7 @@ public class NaraeController {
 	@RequestMapping("user/userJoinApply.do")
 	public ModelAndView testUI2() { 
 		ModelAndView mv = new ModelAndView("user/userJoinApply");
+		mv.addObject("active_menu", "user");
 
 		return mv;
 	}
@@ -36,6 +37,7 @@ public class NaraeController {
 	@RequestMapping("user/userJoinInfo.do")
 	public ModelAndView testUI3() { 
 		ModelAndView mv = new ModelAndView("user/userJoinInfo");
+		mv.addObject("active_menu", "user");
 
 		return mv;
 	}
@@ -43,6 +45,7 @@ public class NaraeController {
 	@RequestMapping("user/userJoinComplete.do")
 	public ModelAndView testUI4() { 
 		ModelAndView mv = new ModelAndView("user/userJoinComplete");
+		mv.addObject("active_menu", "user");
 
 		return mv;
 	}
@@ -50,6 +53,7 @@ public class NaraeController {
 	@RequestMapping("authority/authorityManage.do")
 	public ModelAndView testUI5() { 
 		ModelAndView mv = new ModelAndView("authority/authorityManage");
+		mv.addObject("active_menu", "authority");
 
 		return mv;
 	}
@@ -57,6 +61,7 @@ public class NaraeController {
 	@RequestMapping("mypage/myPage.do")
 	public ModelAndView testUI6() { 
 		ModelAndView mv = new ModelAndView("mypage/myPage");
+		mv.addObject("active_menu", "mypage");
 
 		return mv;
 	}
@@ -64,6 +69,7 @@ public class NaraeController {
 	@RequestMapping("accountbook/accountBookList.do")
 	public ModelAndView testUI7() { 
 		ModelAndView mv = new ModelAndView("accountbook/accountBookList");
+		mv.addObject("active_menu", "accountbook");
 
 		return mv;
 	}
@@ -71,6 +77,7 @@ public class NaraeController {
 	@RequestMapping("withdraw/withdrawApply.do")
 	public ModelAndView testUI8() { 
 		ModelAndView mv = new ModelAndView("withdraw/withdrawApply");
+		mv.addObject("active_menu", "withdraw");
 
 		return mv;
 	}
@@ -78,6 +85,7 @@ public class NaraeController {
 	@RequestMapping("withdraw/withdrawApplyModify.do")
 	public ModelAndView testUI9() { 
 		ModelAndView mv = new ModelAndView("withdraw/withdrawApplyModify");
+		mv.addObject("active_menu", "withdraw");
 
 		return mv;
 	}

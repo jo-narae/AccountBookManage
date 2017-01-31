@@ -21,6 +21,7 @@ public class MinjeongController {
 	@RequestMapping("deposit/depositList.do")
 	public ModelAndView myInfo() {
 		ModelAndView mv = new ModelAndView("deposit/depositList");
+		mv.addObject("active_menu", "deposit");
 
 		return mv;
 	}
@@ -28,6 +29,7 @@ public class MinjeongController {
 	@RequestMapping("deposit/depositDetail.do")
 	public ModelAndView myInfo1() {
 		ModelAndView mv = new ModelAndView("deposit/depositDetail");
+		mv.addObject("active_menu", "deposit");
 
 		return mv;
 	}
@@ -35,6 +37,7 @@ public class MinjeongController {
 	@RequestMapping("deposit/depositInput.do")
 	public ModelAndView myInfo2() {
 		ModelAndView mv = new ModelAndView("deposit/depositInput");
+		mv.addObject("active_menu", "deposit");
 
 		return mv;
 	}
@@ -42,6 +45,7 @@ public class MinjeongController {
 	@RequestMapping("withdraw/withdawMannageList.do")
 	public ModelAndView myInfo3() {
 		ModelAndView mv = new ModelAndView("withdraw/withdawMannageList");
+		mv.addObject("active_menu", "withdraw");
 
 		return mv;
 	}
@@ -49,6 +53,7 @@ public class MinjeongController {
 	@RequestMapping("withdraw/withdrawApplyList.do")
 	public ModelAndView myInfo4() {
 		ModelAndView mv = new ModelAndView("withdraw/withdrawApplyList");
+		mv.addObject("active_menu", "withdraw");
 
 		return mv;
 	}
@@ -56,6 +61,7 @@ public class MinjeongController {
 	@RequestMapping("withdraw/withdrawApplyDetail.do")
 	public ModelAndView myInfo5() {
 		ModelAndView mv = new ModelAndView("withdraw/withdrawApplyDetail");
+		mv.addObject("active_menu", "withdraw");
 
 		return mv;
 	}
