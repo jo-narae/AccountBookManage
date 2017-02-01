@@ -22,6 +22,7 @@ public class NaraeController {
 	public ModelAndView testUI1() {
 		ModelAndView mv = new ModelAndView("user/userLogin");
 		mv.addObject("active_menu", "user");
+		mv.addObject("page_name", "userLogin");
 
 		return mv;
 	}
@@ -30,6 +31,7 @@ public class NaraeController {
 	public ModelAndView testUI2() { 
 		ModelAndView mv = new ModelAndView("user/userJoinApply");
 		mv.addObject("active_menu", "user");
+		mv.addObject("page_name", "userJoinApply");
 
 		return mv;
 	}
@@ -38,6 +40,7 @@ public class NaraeController {
 	public ModelAndView testUI3() { 
 		ModelAndView mv = new ModelAndView("user/userJoinInfo");
 		mv.addObject("active_menu", "user");
+		mv.addObject("page_name", "userJoinInfo");
 
 		return mv;
 	}
@@ -46,6 +49,7 @@ public class NaraeController {
 	public ModelAndView testUI4() { 
 		ModelAndView mv = new ModelAndView("user/userJoinComplete");
 		mv.addObject("active_menu", "user");
+		mv.addObject("page_name", "userJoinComplete");
 
 		return mv;
 	}
@@ -54,6 +58,7 @@ public class NaraeController {
 	public ModelAndView testUI5() { 
 		ModelAndView mv = new ModelAndView("authority/authorityManage");
 		mv.addObject("active_menu", "authority");
+		mv.addObject("page_name", "authorityManage");
 
 		return mv;
 	}
@@ -62,6 +67,7 @@ public class NaraeController {
 	public ModelAndView testUI6() { 
 		ModelAndView mv = new ModelAndView("mypage/myPage");
 		mv.addObject("active_menu", "mypage");
+		mv.addObject("page_name", "myPage");
 
 		return mv;
 	}
@@ -70,6 +76,7 @@ public class NaraeController {
 	public ModelAndView testUI7() { 
 		ModelAndView mv = new ModelAndView("accountbook/accountBookList");
 		mv.addObject("active_menu", "accountbook");
+		mv.addObject("page_name", "accountBookList");
 
 		return mv;
 	}
@@ -78,6 +85,7 @@ public class NaraeController {
 	public ModelAndView testUI8() { 
 		ModelAndView mv = new ModelAndView("withdraw/withdrawApply");
 		mv.addObject("active_menu", "withdraw");
+		mv.addObject("page_name", "withdrawApply");
 
 		return mv;
 	}
@@ -86,6 +94,7 @@ public class NaraeController {
 	public ModelAndView testUI9() { 
 		ModelAndView mv = new ModelAndView("withdraw/withdrawApplyModify");
 		mv.addObject("active_menu", "withdraw");
+		mv.addObject("page_name", "withdrawApplyModify");
 
 		return mv;
 	}

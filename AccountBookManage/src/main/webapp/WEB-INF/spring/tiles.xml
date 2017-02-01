@@ -4,6 +4,7 @@
     <definition name="layout" template="/WEB-INF/tiles/layout/layout.jsp">
 		<put-attribute name="header" value="/WEB-INF/tiles/tile/header.jsp" />
 		<put-attribute name="leftbar" value="/WEB-INF/tiles/tile/leftbar.jsp" />
+		<put-attribute name="import" value="/WEB-INF/tiles/tile/import.jsp" />
     </definition>
  
     <definition name="*/*" extends="layout">

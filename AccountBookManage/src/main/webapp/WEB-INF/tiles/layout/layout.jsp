@@ -6,16 +6,9 @@
 <html>
   
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script type="text/javascript" src="../js/common/jquery-2.0.3.min.js"></script>
-    <script type="text/javascript" src="../js/common/bootstrap.min.js"></script>
-	<script type="text/javascript" src="../js/common/index.js"></script>
-	<link href="../css/common.css" rel="stylesheet" type="text/css">
-    <link href="../css/bootstrap.css" rel="stylesheet" type="text/css">
-    <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
   </head>
-  
+	<tiles:insertAttribute name="import" />
   <body>
     <div class="navbar navbar-default navbar-static-top">
 		<tiles:insertAttribute name="header" />

@@ -22,6 +22,7 @@ public class MinjeongController {
 	public ModelAndView myInfo() {
 		ModelAndView mv = new ModelAndView("deposit/depositList");
 		mv.addObject("active_menu", "deposit");
+		mv.addObject("page_name", "depositList");
 
 		return mv;
 	}
@@ -30,6 +31,7 @@ public class MinjeongController {
 	public ModelAndView myInfo1() {
 		ModelAndView mv = new ModelAndView("deposit/depositDetail");
 		mv.addObject("active_menu", "deposit");
+		mv.addObject("page_name", "depositDetail");
 
 		return mv;
 	}
@@ -38,6 +40,7 @@ public class MinjeongController {
 	public ModelAndView myInfo2() {
 		ModelAndView mv = new ModelAndView("deposit/depositInput");
 		mv.addObject("active_menu", "deposit");
+		mv.addObject("page_name", "depositInput");
 
 		return mv;
 	}
@@ -46,6 +49,7 @@ public class MinjeongController {
 	public ModelAndView myInfo3() {
 		ModelAndView mv = new ModelAndView("withdraw/withdawMannageList");
 		mv.addObject("active_menu", "withdraw");
+		mv.addObject("page_name", "withdawMannageList");
 
 		return mv;
 	}
@@ -54,6 +58,7 @@ public class MinjeongController {
 	public ModelAndView myInfo4() {
 		ModelAndView mv = new ModelAndView("withdraw/withdrawApplyList");
 		mv.addObject("active_menu", "withdraw");
+		mv.addObject("page_name", "withdrawApplyList");
 
 		return mv;
 	}
@@ -62,6 +67,7 @@ public class MinjeongController {
 	public ModelAndView myInfo5() {
 		ModelAndView mv = new ModelAndView("withdraw/withdrawApplyDetail");
 		mv.addObject("active_menu", "withdraw");
+		mv.addObject("page_name", "withdrawApplyDetail");
 
 		return mv;
 	}
