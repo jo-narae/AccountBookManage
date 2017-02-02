@@ -18,36 +18,36 @@ public class MinjeongController {
 	 * 내정보 화면
 	 * @return
 	 */
-	@RequestMapping("deposit/depositList.do")
+	@RequestMapping("admin/deposit/depositList.do")
 	public ModelAndView myInfo() {
-		ModelAndView mv = new ModelAndView("deposit/depositList");
+		ModelAndView mv = new ModelAndView("admin/deposit/depositList");
 		mv.addObject("active_menu", "deposit");
 		mv.addObject("page_name", "depositList");
 
 		return mv;
 	}
 	
-	@RequestMapping("deposit/depositDetail.do")
+	@RequestMapping("admin/deposit/depositDetail.do")
 	public ModelAndView myInfo1() {
-		ModelAndView mv = new ModelAndView("deposit/depositDetail");
+		ModelAndView mv = new ModelAndView("admin/deposit/depositDetail");
 		mv.addObject("active_menu", "deposit");
 		mv.addObject("page_name", "depositDetail");
 
 		return mv;
 	}
 	
-	@RequestMapping("deposit/depositInput.do")
+	@RequestMapping("admin/deposit/depositInput.do")
 	public ModelAndView myInfo2() {
-		ModelAndView mv = new ModelAndView("deposit/depositInput");
+		ModelAndView mv = new ModelAndView("admin/deposit/depositInput");
 		mv.addObject("active_menu", "deposit");
 		mv.addObject("page_name", "depositInput");
 
 		return mv;
 	}
 	
-	@RequestMapping("withdraw/withdawMannageList.do")
+	@RequestMapping("admin/withdraw/withdawMannageList.do")
 	public ModelAndView myInfo3() {
-		ModelAndView mv = new ModelAndView("withdraw/withdawMannageList");
+		ModelAndView mv = new ModelAndView("admin/withdraw/withdawMannageList");
 		mv.addObject("active_menu", "withdraw");
 		mv.addObject("page_name", "withdawMannageList");
 

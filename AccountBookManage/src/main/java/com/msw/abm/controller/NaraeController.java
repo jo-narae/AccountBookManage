@@ -26,7 +26,7 @@ public class NaraeController {
 
 		return mv;
 	}
-	
+
 	@RequestMapping("user/userJoinApply.do")
 	public ModelAndView testUI2() { 
 		ModelAndView mv = new ModelAndView("user/userJoinApply");
@@ -54,9 +54,9 @@ public class NaraeController {
 		return mv;
 	}
 	
-	@RequestMapping("authority/authorityManage.do")
+	@RequestMapping("admin/authority/authorityManage.do")
 	public ModelAndView testUI5() { 
-		ModelAndView mv = new ModelAndView("authority/authorityManage");
+		ModelAndView mv = new ModelAndView("admin/authority/authorityManage");
 		mv.addObject("active_menu", "authority");
 		mv.addObject("page_name", "authorityManage");
 
