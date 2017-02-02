@@ -14,7 +14,7 @@
 		<intercept-url pattern="/accountbook/**" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')" />
 		<intercept-url pattern="/mypage/**" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')" />
 		<intercept-url pattern="/withdraw/**" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')" />
-		<intercept-url pattern="/admin/**/**" access="ROLE_ADMIN" />
+		<intercept-url pattern="/admin/**/**" access="hasRole('ROLE_ADMIN')" />
 	</http>
 	
 	<authentication-manager>
