@@ -24,27 +24,26 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr>
-					<td>1</td>
-					<td>함민정</td>
-					<td>회비</td>
-					<td>2000</td>
-					<td>2017/1/17</td>
-				</tr>
-				<tr>
-					<td>2</td>
-					<td>조나래</td>
-					<td>회식비</td>
-					<td>3000</td>
-					<td>2017/1/17</td>
-				</tr>
-				<tr>
-					<td>3</td>
-					<td>아무개</td>
-					<td>선물</td>
-					<td>4000</td>
-					<td>2017/1/17</td>
-				</tr>
+			<c:choose>
+					<c:when test="${empty depositList}">
+						<ul class="list-group text-muted">
+							<tr>
+			                  <td colspan=5>입금목록이 없습니다.</td>
+			                </tr>
+						</ul>
+					</c:when>
+					<c:otherwise>
+						<c:forEach var="deposit" items="${depositList}">
+			                <tr>
+								<td>${deposit.id}</td>
+								<td>${deposit.user_name}</td>
+								<td>${deposit.content}</td>
+								<td>${deposit.price}</td>
+								<td>${deposit.deal_date}</td>
+			                </tr>
+		                </c:forEach>
+					</c:otherwise>
+				</c:choose>
 			</tbody>
 		</table>
 	</div>
@@ -59,9 +58,13 @@
 		<fmt:parseNumber var="startPage"  value="${((currentPage - 1) / PAGEBLOCK)}" integerOnly="true" />
 		<c:set var="startPage" value="${startPage - (startPage % 1) }" /> <!--  floor -->
 		<c:set var="startPage" value="${startPage * PAGEBLOCK + 1 }" />
+		<fmt:parseNumber var="totalPage"  value="${( depositListCount / PAGEBLOCK)}" integerOnly="true" />
 		
 		<c:if test="${startPage < 0}">
              <c:set var="startPage" value="1" />
+		</c:if>
+		<c:if test="${depositListCount % PAGEBLOCK != 0}">
+             <c:set var="totalPage" value="${totalPage + 1}" />
 		</c:if>
 		
 		<c:set var="endPage" value="${startPage - 1 + PAGEBLOCK }" />

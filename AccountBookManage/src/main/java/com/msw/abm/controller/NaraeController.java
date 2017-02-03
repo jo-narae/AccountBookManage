@@ -53,16 +53,7 @@ public class NaraeController {
 
 		return mv;
 	}
-	
-	@RequestMapping("admin/authority/authorityManage.do")
-	public ModelAndView testUI5() { 
-		ModelAndView mv = new ModelAndView("admin/authority/authorityManage");
-		mv.addObject("active_menu", "authority");
-		mv.addObject("page_name", "authorityManage");
 
-		return mv;
-	}
-	
 	@RequestMapping("mypage/myPage.do")
 	public ModelAndView testUI6() { 
 		ModelAndView mv = new ModelAndView("mypage/myPage");

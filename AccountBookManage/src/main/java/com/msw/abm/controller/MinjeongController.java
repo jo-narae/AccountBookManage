@@ -17,50 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 public class MinjeongController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-	
-	/**
-	 * 내정보 화면
-	 * @return
-	 */
-	@RequestMapping("admin/deposit/depositList.do")
-	public ModelAndView myInfo(@RequestParam ("pageNum") int currentPage, HttpServletRequest request, HttpServletResponse response) {
-		ModelAndView mv = new ModelAndView("admin/deposit/depositList");
-		mv.addObject("active_menu", "deposit");
-		mv.addObject("page_name", "depositList");
-		
-		mv.addObject("currentPage", currentPage);
-		mv.addObject("totalPage", 27);
 
-		return mv;
-	}
-	
-	@RequestMapping("admin/deposit/depositDetail.do")
-	public ModelAndView myInfo1() {
-		ModelAndView mv = new ModelAndView("admin/deposit/depositDetail");
-		mv.addObject("active_menu", "deposit");
-		mv.addObject("page_name", "depositDetail");
-
-		return mv;
-	}
-	
-	@RequestMapping("admin/deposit/depositInput.do")
-	public ModelAndView myInfo2() {
-		ModelAndView mv = new ModelAndView("admin/deposit/depositInput");
-		mv.addObject("active_menu", "deposit");
-		mv.addObject("page_name", "depositInput");
-
-		return mv;
-	}
-	
-	@RequestMapping("admin/withdraw/withdawMannageList.do")
-	public ModelAndView myInfo3() {
-		ModelAndView mv = new ModelAndView("admin/withdraw/withdawMannageList");
-		mv.addObject("active_menu", "withdraw");
-		mv.addObject("page_name", "withdawMannageList");
-
-		return mv;
-	}
-	
 	@RequestMapping("withdraw/withdrawApplyList.do")
 	public ModelAndView myInfo4() {
 		ModelAndView mv = new ModelAndView("withdraw/withdrawApplyList");
