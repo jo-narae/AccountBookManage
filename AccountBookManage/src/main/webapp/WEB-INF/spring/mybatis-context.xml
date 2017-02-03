@@ -11,15 +11,15 @@
 
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-        <property name="url" value="jdbc:mysql://localhost:3306/chatting" />
+        <property name="url" value="jdbc:mysql://localhost:3306/accountbook" />
         <property name="username" value="root" />
         <property name="password" value="1234" />
     </bean>
  
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
-        <property name="typeAliasesPackage" value="com.chat.vo"/> <!-- vo 패키지의 typeAliasesPackage 풀 경로를 집어넣어줘야 함 -->
-        <property name="mapperLocations" value="classpath*:com/chat/mapper/*.xml"/>
+        <property name="typeAliasesPackage" value="com.msw.abm.vo"/> <!-- vo 패키지의 typeAliasesPackage 풀 경로를 집어넣어줘야 함 -->
+        <property name="mapperLocations" value="classpath*:com/msw/abm/mapper/*.xml"/>
     </bean>
    
     <bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">

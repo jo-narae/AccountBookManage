@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chat.mapper.ChatMapper">
+
+    <resultMap type="com.chat.vo.ChatVO" id="ChattingMap">
+        <result property="room_seq" column="ROOM_SEQ" />
+        <result property="chat_seq" column="CHAT_SEQ" />
+        <result property="user_name" column="USER_NAME" />
+        <result property="user_id" column="USER_ID" />
+        <result property="content" column="CONTENT" />
+        <result property="date" column="DATE" />
+    </resultMap>
+
+    <!-- 대화내용 리스트  -->
+    <select id="chatList" resultMap="ChattingMap" parameterType="com.chat.vo.ChatVO">
+        SELECT USER_NAME, CONTENT, DATE FROM user_chat
+        WHERE room_seq = #{room_seq}
+    </select>
+    
+    <!-- 대화내용 입력  -->
+    <insert id="chatInsert" parameterType="com.chat.vo.ChatVO" >
+        INSERT INTO user_chat (room_seq, user_name, user_id, content, date) values(#{room_seq}, #{user_name}, 'testid', #{content}, now())
+    </insert>
+
+</mapper>

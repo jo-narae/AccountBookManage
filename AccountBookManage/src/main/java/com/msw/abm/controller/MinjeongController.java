@@ -1,9 +1,13 @@
 package com.msw.abm.controller;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 /**
@@ -19,10 +23,13 @@ public class MinjeongController {
 	 * @return
 	 */
 	@RequestMapping("admin/deposit/depositList.do")
-	public ModelAndView myInfo() {
+	public ModelAndView myInfo(@RequestParam ("pageNum") int currentPage, HttpServletRequest request, HttpServletResponse response) {
 		ModelAndView mv = new ModelAndView("admin/deposit/depositList");
 		mv.addObject("active_menu", "deposit");
 		mv.addObject("page_name", "depositList");
+		
+		mv.addObject("currentPage", currentPage);
+		mv.addObject("totalPage", 27);
 
 		return mv;
 	}

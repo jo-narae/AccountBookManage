@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chat.mapper.RoomMapper">
+ 
+    <resultMap type="com.chat.vo.RoomVO" id="ChatRoomMap">
+        <result property="seq" column="SEQ" />
+        <result property="room_title" column="ROOM_TITLE" />
+        <result property="master_id" column="MASTER_ID" />
+        <result property="master_name" column="MASTER_NAME" />
+        <result property="date" column="DATE" />
+    </resultMap>
+
+    <!-- 채팅방 리스트 -->
+    <select id="roomList" resultMap="ChatRoomMap" parameterType="com.chat.vo.RoomVO">
+        SELECT SEQ, ROOM_TITLE, MASTER_ID, MASTER_NAME, DATE FROM room_list
+        ORDER BY SEQ desc
+			LIMIT #{pageSize} OFFSET #{skipCnt}
+    </select>
+    
+    <!-- 총 채팅방 수 -->
+    <select id="listTotalCount" resultType="int">
+        SELECT count(*) TOTALCOUNT FROM room_list
+    </select>
+    
+    <!-- 채팅방 개설  -->
+    <insert id="roomAdd" parameterType="com.chat.vo.RoomVO" >
+        INSERT INTO room_list (ROOM_TITLE, MASTER_ID, MASTER_NAME, date) values(#{room_title}, #{master_id}, #{master_name}, now())
+    </insert>
+    
+    <!-- 제일 마지막 채팅방 정보 로드  -->
+    <select id="lastChatInfo" resultMap="ChatRoomMap" parameterType="com.chat.vo.RoomVO">
+        SELECT SEQ, ROOM_TITLE, MASTER_ID, MASTER_NAME, DATE FROM room_list
+        ORDER BY SEQ desc LIMIT 1
+    </select>
+    
+    <!-- 채팅방 정보 로드  -->
+    <select id="chatInfo" resultMap="ChatRoomMap" parameterType="com.chat.vo.RoomVO">
+        SELECT SEQ, ROOM_TITLE, MASTER_ID, MASTER_NAME, DATE FROM room_list
+        WHERE SEQ = #{seq}
+    </select>
+    
+    <!-- 채팅방 방장 체크  -->
+    <select id="masterCheck" resultMap="ChatRoomMap" parameterType="com.chat.vo.RoomVO">
+        SELECT SEQ, ROOM_TITLE, MASTER_ID, MASTER_NAME, DATE FROM room_list
+        WHERE SEQ = #{seq} and MASTER_ID = #{master_id}
+    </select>
+    
+    <!-- 채팅방 삭제 -->
+    <delete id="roomRemove" parameterType="com.chat.vo.RoomVO">
+        DELETE FROM room_list WHERE SEQ = #{seq}
+    </delete>
+
+</mapper>
