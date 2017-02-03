@@ -10,7 +10,14 @@
     <definition name="*/*" extends="layout">
         <put-attribute name="contents" value="/WEB-INF/view/{1}/{2}.jsp" />
     </definition>
-    <definition name="*/*/*" extends="layout">
+    
+    <definition name="admin_layout" template="/WEB-INF/tiles/layout/layout.jsp">
+		<put-attribute name="header" value="/WEB-INF/tiles/tile/header.jsp" />
+		<put-attribute name="leftbar" value="/WEB-INF/tiles/tile/leftbar.jsp" />
+		<put-attribute name="import" value="/WEB-INF/tiles/tile/admin_import.jsp" />
+    </definition>
+    
+    <definition name="*/*/*" extends="admin_layout">
         <put-attribute name="contents" value="/WEB-INF/view/{1}/{2}/{3}.jsp" />
     </definition>
  
