@@ -29,6 +29,6 @@
     <!-- 총 채팅방 수 -->
     <select id="withdrawMannageListCount" resultType="int">
         SELECT count(*) TOTALCOUNT FROM apply
-        WHERE APPLY_DATE = "STAY"
+        WHERE APPLY_TYPE = "STAY"
     </select>
 </mapper>

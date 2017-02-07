@@ -43,7 +43,7 @@
 								<td>${withdraw.content}</td>
 								<td>${withdraw.price}</td>
 								<td>${withdraw.deposit_account}</td>
-								<td>${withdraw.deal_date}</td>
+								<td>${withdraw.apply_date}</td>
 								<td>${withdraw.receipt_id}</td>
 			                </tr>
 		                </c:forEach>

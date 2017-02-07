@@ -11,7 +11,7 @@ public class ApplyVO {
 	private int price;
 	private Date apply_date;
 	private String apply_type;
-	private int deposit_account;
+	private String deposit_account;
 	private int receipt_id;
 	
 	public int getSkipCount() {
@@ -62,10 +62,10 @@ public class ApplyVO {
 	public void setApply_type(String apply_type) {
 		this.apply_type = apply_type;
 	}
-	public int getDeposit_account() {
+	public String getDeposit_account() {
 		return deposit_account;
 	}
-	public void setDeposit_account(int deposit_account) {
+	public void setDeposit_account(String deposit_account) {
 		this.deposit_account = deposit_account;
 	}
 	public int getReceipt_id() {
