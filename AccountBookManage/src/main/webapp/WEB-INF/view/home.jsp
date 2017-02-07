@@ -22,7 +22,7 @@
             <h1>Account Book Manage</h1>
             <p>모바일소프트웨어학과의 장부관리 사이트입니다.</p>
             <br>
-            <a class="btn btn-primary" style="width:800px;">시작하기</a>
+            <a class="btn btn-primary" style="width:800px;" onClick="loginPageRedirect();">시작하기</a>
           </div>
         </div>
       </div>

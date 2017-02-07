@@ -1,26 +1,8 @@
 /**
- * 공통
+ * 메인 페이지
  */
 
-function roomList() {
-	location.href = "./room/roomList.do?pageNum=1";
-}
-
-//내정보
-function myInfo() {
-	location.href = "./info/myInfo.do";
-}
-
-//로그아웃
-function sessionLogin() {
+//로그인 화면으로 이동
+function loginPageRedirect() {
 	location.href = "./user/userLogin.do";
-}
-
-//로그아웃
-function sessionLogout() {
-	if (confirm("로그아웃 하시겠습니까?") == true){
-		location.href = "./user/sessionLogout.do";
-	}else{
-	    return;
-	}
 }
