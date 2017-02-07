@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.msw.abm.mapper.ApplyMapper">
+ 
+    <resultMap type="com.msw.abm.vo.ApplyVO" id="ApplyMap">
+        <result property="id" column="ID" />
+        <result property="user_name" column="USER_NAME" />
+        <result property="content" column="CONTENT" />
+        <result property="price" column="PRICE" />
+        <result property="apply_date" column="APPLY_DATE" />
+        <result property="apply_type" column="APPLY_TYPE" />
+        <result property="deposit_account" column="DEPOSIT_ACCOUNT" />
+        <result property="receipt_id" column="RECEIPT_ID" />
+    </resultMap>
+
+	<!-- 
+		출금목록 조회
+		대기 : STAY, 승인 : PERMIT, 반려 : RETURN
+	-->
+	
+	<select id="findWithdrawMannageList" resultMap="ApplyMap" parameterType="com.msw.abm.vo.ApplyVO">
+        SELECT ID, USER_NAME, CONTENT, PRICE, APPLY_DATE, DEPOSIT_ACCOUNT, RECEIPT_ID FROM apply
+        WHERE APPLY_TYPE = "STAY"
+        ORDER BY id desc
+			LIMIT #{listSize} OFFSET #{skipCount}
+    </select>
+    <!-- 총 채팅방 수 -->
+    <select id="withdrawMannageListCount" resultType="int">
+        SELECT count(*) TOTALCOUNT FROM apply
+        WHERE APPLY_TYPE = "STAY"
+    </select>
+</mapper>

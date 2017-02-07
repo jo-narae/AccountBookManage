@@ -17,8 +17,7 @@
 		<table class="table">
 			<thead>
 				<tr>
-					<td><input type="checkbox" name="chk_info" value="1">
-					</td>
+					<th><input type="checkbox" name="chk_info" value="1"></th>
 					<th>이름</th>
 					<th>내역</th>
 					<th>금액</th>
@@ -32,7 +31,7 @@
 					<c:when test="${empty withdrawMannageList}">
 						<ul class="list-group text-muted">
 							<tr>
-			                  <td colspan=5>입금목록이 없습니다.</td>
+			                  <td colspan=7>출금 관리 목록이 없습니다.</td>
 			                </tr>
 						</ul>
 					</c:when>
@@ -44,7 +43,7 @@
 								<td>${withdraw.content}</td>
 								<td>${withdraw.price}</td>
 								<td>${withdraw.deposit_account}</td>
-								<td>${withdraw.deal_date}</td>
+								<td>${withdraw.apply_date}</td>
 								<td>${withdraw.receipt_id}</td>
 			                </tr>
 		                </c:forEach>

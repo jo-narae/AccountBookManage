@@ -43,6 +43,12 @@ where u.id = a.id and a.authority = ab.authority;
 INSERT INTO authority (authority, authority_name) values ("ROLE_USER", "일반사용자");
 INSERT INTO authority (authority, authority_name) values ("ROLE_ADMIN", "관리자");
 */
+/*
+INSERT INTO apply (user_name, content, price, apply_type, deposit_account, apply_date ) values ("이주형", "커피 구입", 13000, "STAY", "우리 1234-380-7658854", NOW());
+INSERT INTO apply (user_name, content, price, apply_type, deposit_account, apply_date ) values ("이주형", "커피 구입", 13000, "STAY", "우리 1234-380-7658854", NOW());
+INSERT INTO apply (user_name, content, price, apply_type, deposit_account, apply_date ) values ("이주형", "커피 구입", 13000, "PERMIT", "우리 1234-380-7658854", NOW());
+INSERT INTO apply (user_name, content, price, apply_type, deposit_account, apply_date ) values ("이주형", "커피 구입", 13000, "RETURN", "우리 1234-380-7658854", NOW());
+*/
 
 -- 영수증 테이블
 CREATE TABLE receipt
@@ -62,20 +68,20 @@ CREATE TABLE deal
 	balance int NOT NULL,
 	deal_date datetime NOT NULL,
   deal_type varchar(10) NOT NULL,
-  deposit_account int,
+  deposit_account varchar(255),
   receipt_id int,
   FOREIGN KEY (receipt_id) REFERENCES receipt(id) ON DELETE CASCADE
 );
 
 -- 거래 테이블 INSERT
-INSERT INTO deal (user_name, content, price, balance, deal_date, deal_type ) values ("이주형", "인수인계", "130000", "130000", NOW(), "DEPOSIT");
-INSERT INTO deal (user_name, content, price, balance, deal_date, deal_type ) values ("함민정", "공동 USB 구입", "10000", "120000", NOW(), "WITHDRAW");
-INSERT INTO deal (user_name, content, price, balance, deal_date, deal_type ) values ("조나래", "커피 구입", "30000", "90000", NOW(), "WITHDRAW");
-INSERT INTO deal (user_name, content, price, balance, deal_date, deal_type ) values ("이주형", "회비납부", "30000", "120000", NOW(), "DEPOSIT");
-INSERT INTO deal (user_name, content, price, balance, deal_date, deal_type ) values ("김민석", "회비납부", "30000", "150000", NOW(), "DEPOSIT");
-INSERT INTO deal (user_name, content, price, balance, deal_date, deal_type ) values ("이현석", "회비납부", "30000", "180000", NOW(), "DEPOSIT");
-INSERT INTO deal (user_name, content, price, balance, deal_date, deal_type ) values ("조나래", "회비납부", "30000", "210000", NOW(), "DEPOSIT");
-INSERT INTO deal (user_name, content, price, balance, deal_date, deal_type ) values ("함민정", "졸업생 선물", "50000", "160000", NOW(), "WITHDRAW");
+INSERT INTO deal (user_name, content, price, balance, deal_date, deal_type ) values ("이주형", "인수인계", 130000, 130000, NOW(), "DEPOSIT");
+INSERT INTO deal (user_name, content, price, balance, deal_date, deal_type ) values ("함민정", "공동 USB 구입", 10000, 120000, NOW(), "WITHDRAW");
+INSERT INTO deal (user_name, content, price, balance, deal_date, deal_type ) values ("조나래", "커피 구입", 30000, 90000, NOW(), "WITHDRAW");
+INSERT INTO deal (user_name, content, price, balance, deal_date, deal_type ) values ("이주형", "회비납부", 30000, 120000, NOW(), "DEPOSIT");
+INSERT INTO deal (user_name, content, price, balance, deal_date, deal_type ) values ("김민석", "회비납부", 30000, 150000, NOW(), "DEPOSIT");
+INSERT INTO deal (user_name, content, price, balance, deal_date, deal_type ) values ("이현석", "회비납부", 30000, 180000, NOW(), "DEPOSIT");
+INSERT INTO deal (user_name, content, price, balance, deal_date, deal_type ) values ("조나래", "회비납부", 30000, 210000, NOW(), "DEPOSIT");
+INSERT INTO deal (user_name, content, price, balance, deal_date, deal_type ) values ("함민정", "졸업생 선물", 50000, 160000, NOW(), "WITHDRAW");
 
 
 -- 신청 테이블
@@ -87,7 +93,7 @@ CREATE TABLE apply
   price int NOT NULL,
 	apply_date datetime NOT NULL,
   apply_type varchar(10) NOT NULL,
-  deposit_account int,
+  deposit_account varchar(255),
   receipt_id int,
   FOREIGN KEY (receipt_id) REFERENCES receipt(id) ON DELETE CASCADE
 );

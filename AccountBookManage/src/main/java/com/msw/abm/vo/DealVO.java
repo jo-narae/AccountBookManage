@@ -12,7 +12,7 @@ public class DealVO {
 	private int balance;
 	private Date deal_date;
 	private String deal_type;
-	private int deposit_account;
+	private String deposit_account;
 	private int receipt_id;
 	
 	
@@ -70,10 +70,10 @@ public class DealVO {
 	public void setDeal_type(String deal_type) {
 		this.deal_type = deal_type;
 	}
-	public int getDeposit_account() {
+	public String getDeposit_account() {
 		return deposit_account;
 	}
-	public void setDeposit_account(int deposit_account) {
+	public void setDeposit_account(String deposit_account) {
 		this.deposit_account = deposit_account;
 	}
 	public int getReceipt_id() {
