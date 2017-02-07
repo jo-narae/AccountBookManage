@@ -36,7 +36,7 @@ public class DealController {
 		mv.addObject("page_name", "depositList");
 		
 		mv.addObject("currentPage", currentPage);
-		mv.addObject("depositList", dealService.fintDepositList(currentPage));
+		mv.addObject("depositList", dealService.findDepositList(currentPage));
 		mv.addObject("depositListCount", dealService.depositListCount());
 
 		return mv;
@@ -60,11 +60,15 @@ public class DealController {
 		return mv;
 	}
 	
-	@RequestMapping("admin/withdraw/withdawMannageList.do")
-	public ModelAndView withdawMannageList() {
-		ModelAndView mv = new ModelAndView("admin/withdraw/withdawMannageList");
+	@RequestMapping("admin/withdraw/withdrawMannageList.do")
+	public ModelAndView withdawMannageList(@RequestParam ("pageNum") int currentPage, HttpServletRequest request, HttpServletResponse response) {
+		ModelAndView mv = new ModelAndView("admin/withdraw/withdrawMannageList");
 		mv.addObject("active_menu", "withdraw");
 		mv.addObject("page_name", "withdawMannageList");
+		
+		mv.addObject("currentPage", currentPage);
+		mv.addObject("withdrawMannageList", dealService.findWithdrawMannageList(currentPage));
+		mv.addObject("withdrawMannageListCount", dealService.withdrawMannageListCount());
 
 		return mv;
 	}

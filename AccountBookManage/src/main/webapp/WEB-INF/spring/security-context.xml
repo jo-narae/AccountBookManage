@@ -11,9 +11,9 @@
 	">
 	
 	<http auto-config="true">
-		<intercept-url pattern="/accountbook/**" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')" />
-		<intercept-url pattern="/mypage/**" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')" />
-		<intercept-url pattern="/withdraw/**" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')" />
+		<intercept-url pattern="/accountbook/**" access="hasRole('ROLE_USER')" />
+		<intercept-url pattern="/mypage/**" access="hasRole('ROLE_USER')" />
+		<intercept-url pattern="/withdraw/**" access="hasRole('ROLE_USER')" />
 		<intercept-url pattern="/admin/**/**" access="hasRole('ROLE_ADMIN')" />
 		<form-login login-page="/user/userLogin.do" authentication-failure-url="/user/userLogin.do"
 			login-processing-url="/user/sessionLogin.do" always-use-default-target="true"

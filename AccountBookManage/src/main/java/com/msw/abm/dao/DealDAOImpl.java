@@ -21,11 +21,11 @@ public class DealDAOImpl implements DealDAO {
 	 * @return List<DealVO>
 	 */
 	@Override
-	public List<DealVO> fintDepositList(DealVO dv) {
+	public List<DealVO> findDepositList(DealVO dv) {
 		List<DealVO> result;
 		DealMapper resultMapper = sqlSession.getMapper(DealMapper.class);
 
-		result = resultMapper.fintDepositList(dv);
+		result = resultMapper.findDepositList(dv);
 
 		return result;
 	}
@@ -39,6 +39,30 @@ public class DealDAOImpl implements DealDAO {
 		DealMapper resultMapper = sqlSession.getMapper(DealMapper.class);
 
 		return resultMapper.depositListCount();
+	}
+	/**
+	 * 출금 목록 리스트 조회
+	 * @param DealVO
+	 * @return List<DealVO>
+	 */
+	@Override
+	public List<DealVO> findWithdrawMannageList(DealVO dv) {
+		List<DealVO> result;
+		DealMapper resultMapper = sqlSession.getMapper(DealMapper.class);
+
+		result = resultMapper.findWithdrawMannageList(dv);
+
+		return result;
+	}
+	/**
+	 * 출금 목록 리스트 총 개수 조회
+	 * @return int
+	 */
+	@Override
+	public int withdrawMannageListCount() {
+		DealMapper resultMapper = sqlSession.getMapper(DealMapper.class);
+
+		return resultMapper.withdrawMannageListCount();
 	}
 	
 }
