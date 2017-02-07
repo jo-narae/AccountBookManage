@@ -14,7 +14,7 @@
     <definition name="admin_layout" template="/WEB-INF/tiles/layout/layout.jsp">
 		<put-attribute name="header" value="/WEB-INF/tiles/tile/header.jsp" />
 		<put-attribute name="leftbar" value="/WEB-INF/tiles/tile/leftbar.jsp" />
-		<put-attribute name="import" value="/WEB-INF/tiles/tile/admin_import.jsp" />
+		<put-attribute name="import" value="/WEB-INF/tiles/tile/admin-import.jsp" />
     </definition>
     
     <definition name="*/*/*" extends="admin_layout">

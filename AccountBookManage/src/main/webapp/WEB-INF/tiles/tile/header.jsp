@@ -78,12 +78,12 @@
 		</sec:authorize>
 		<sec:authorize access="isAnonymous()">
 			<li>
-				<a href="#"><i class="fa fa-cog"></i> 로그인</a>
+				<a href="javascript:sessionLogin();"><i class="fa fa-cog"></i> 로그인</a>
 			</li>
 		</sec:authorize>
 		<sec:authorize access="isAuthenticated()">
 			<li>
-				<a href="#"><i class="fa fa-cog"></i> 로그아웃</a>
+				<a href="javascript:sessionLogout();"><i class="fa fa-cog"></i> 로그아웃</a>
 			</li>
 		</sec:authorize>
 	</ul>
