@@ -12,7 +12,8 @@
 		<result property="phone_number" column="phone_number" />
 		<result property="email" column="email" />
 		<result property="cardinal_number" column="cardinal_number" />
-		<result property="authority" column="authority" />		
+		<result property="authority" column="authority" />
+		<result property="enable" column="enable" />	
 	</resultMap>
 
 	<!-- 일반 로그인 -->
@@ -24,6 +25,7 @@
 	         , user.email
 	         , user.cardinal_number
 	         , auth.authority
+	         , user.enable
 	      FROM user as user, user_auth as auth
 	     WHERE user.id = #{id}
 	       AND user.password = #{password}

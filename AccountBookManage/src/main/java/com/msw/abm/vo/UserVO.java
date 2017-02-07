@@ -8,6 +8,7 @@ public class UserVO {
 	private String email;
 	private String cardinal_number;
 	private String authority;
+	private boolean enabled;
 	
 	public String getId() {
 		return id;
@@ -50,6 +51,12 @@ public class UserVO {
 	}
 	public void setAuthority(String authority) {
 		this.authority = authority;
+	}
+	public boolean isEnabled() {
+		return enabled;
+	}
+	public void setEnabled(boolean enabled) {
+		this.enabled = enabled;
 	}
 	
 }
