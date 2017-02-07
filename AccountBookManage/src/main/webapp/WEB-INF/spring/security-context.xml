@@ -22,13 +22,15 @@
 		<concurrency-control max-sessions="1" expired-url="/user/userLogin.do" />
 		</session-management>
 	</http>
-	
+
 	<authentication-manager>
 		<authentication-provider>
-			<user-service>
-				<user name="user" password="1234" authorities="ROLE_USER"/>
-				<user name="admin" password="1234" authorities="ROLE_USER, ROLE_ADMIN"/>
-			</user-service>
+			<jdbc-user-service data-source-ref="dataSource"
+				users-by-username-query="select id, password, enabled
+												from user where id=?"
+	
+				authorities-by-username-query="select id, authority
+												from user_auth where id=?" />
 		</authentication-provider>
 	</authentication-manager>
 
