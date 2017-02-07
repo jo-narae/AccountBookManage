@@ -18,15 +18,5 @@ public interface DealDAO {
 	 * @return int
 	 */
 	int depositListCount();
-	/**
-	 * 출금 목록 리스트 조회
-	 * @param pageNum 현재 페이지 수
-	 * @return List<DealVO>
-	 */
-	List<DealVO> findWithdrawMannageList(DealVO dv);
-	/**
-	 * 출금 목록 리스트 총 개수 조회
-	 * @return int
-	 */
-	int withdrawMannageListCount();
+	
 }

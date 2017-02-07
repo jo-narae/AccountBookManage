@@ -60,18 +60,7 @@ public class DealController {
 		return mv;
 	}
 	
-	@RequestMapping("admin/withdraw/withdrawMannageList.do")
-	public ModelAndView withdawMannageList(@RequestParam ("pageNum") int currentPage, HttpServletRequest request, HttpServletResponse response) {
-		ModelAndView mv = new ModelAndView("admin/withdraw/withdrawMannageList");
-		mv.addObject("active_menu", "withdraw");
-		mv.addObject("page_name", "withdawMannageList");
-		
-		mv.addObject("currentPage", currentPage);
-		mv.addObject("withdrawMannageList", dealService.findWithdrawMannageList(currentPage));
-		mv.addObject("withdrawMannageListCount", dealService.withdrawMannageListCount());
-
-		return mv;
-	}
+	
 	
 	@RequestMapping("admin/authority/authorityManage.do")
 	public ModelAndView authorityManage() { 
