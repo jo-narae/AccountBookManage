@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib uri="http://www.springframework.org/security/tags" prefix="sec" %>
 <div class="container">
   <div class="navbar-header">
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-ex-collapse">
@@ -61,6 +62,7 @@
 				</li>
 			</c:otherwise>
 		</c:choose>
+		<sec:authorize access="hasRole('ROLE_ADMIN')">
 		<c:choose>
 			<c:when test="${active_menu eq 'authority'}">
 				<li class="active">
@@ -73,6 +75,17 @@
 				</li>
 			</c:otherwise>
 		</c:choose>
-    </ul>
+		</sec:authorize>
+		<sec:authorize access="isAnonymous()">
+			<li>
+				<a href="#"><i class="fa fa-cog"></i> 로그인</a>
+			</li>
+		</sec:authorize>
+		<sec:authorize access="isAuthenticated()">
+			<li>
+				<a href="#"><i class="fa fa-cog"></i> 로그아웃</a>
+			</li>
+		</sec:authorize>
+	</ul>
   </div>
 </div>

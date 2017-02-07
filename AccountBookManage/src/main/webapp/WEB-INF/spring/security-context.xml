@@ -14,15 +14,22 @@
 		<intercept-url pattern="/accountbook/**" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')" />
 		<intercept-url pattern="/mypage/**" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')" />
 		<intercept-url pattern="/withdraw/**" access="hasAnyRole('ROLE_USER', 'ROLE_ADMIN')" />
-		<!--  intercept-url pattern="/admin/**/**" access="hasRole('ROLE_ADMIN')" / --> <!-- 임시 주석 -->
+		<intercept-url pattern="/admin/**/**" access="hasRole('ROLE_ADMIN')" />
+		<form-login login-page="/user/userLogin.do" authentication-failure-url="/user/userLogin.do"
+			login-processing-url="/user/sessionLogin.do" always-use-default-target="true"
+			default-target-url="/withdraw/withdrawApplyList.do" username-parameter="id" password-parameter="password" />
+		<session-management invalid-session-url="/">
+		<concurrency-control max-sessions="1" expired-url="/user/userLogin.do" />
+		</session-management>
 	</http>
 	
 	<authentication-manager>
 		<authentication-provider>
 			<user-service>
-				<user name="user" password="user" authorities="ROLE_USER"/>
-				<user name="admin" password="admin" authorities="ROLE_ADMIN"/>
+				<user name="user" password="1234" authorities="ROLE_USER"/>
+				<user name="admin" password="1234" authorities="ROLE_USER, ROLE_ADMIN"/>
 			</user-service>
 		</authentication-provider>
 	</authentication-manager>
+
 </beans:beans>

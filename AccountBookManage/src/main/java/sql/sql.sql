@@ -1,4 +1,50 @@
-﻿-- 영수증 테이블
+﻿-- 사용자 테이블
+CREATE TABLE user
+(
+  id varchar(30) NOT NULL primary key,
+  name varchar(10) NOT NULL,
+  password varchar(30) NOT NULL,
+  phone_number varchar(30) NOT NULL,
+  email varchar(255) NOT NULL,
+  cardinal_number varchar(30) NOT NULL
+);
+
+-- 사용자 권한 테이블
+CREATE TABLE user_auth
+(
+  id varchar(30) not null, 
+  authority varchar(30) not null
+);
+
+-- 권한 테이블
+CREATE TABLE authority
+(
+  authority varchar(30) not null primary key,
+  authority_name varchar(30) not null
+);
+
+/* 사용자 테이블 가라 데이터
+INSERT INTO user (id, name, password, phone_number, email, cardinal_number) values ("user", "일반사용자", "1234", "01043406004", "test@test.com", "11기");
+INSERT INTO user (id, name, password, phone_number, email, cardinal_number) values ("admin", "관리자", "1234", "01043406004", "test@test.com", "12기");
+INSERT INTO user_auth (id, authority) values ("user", "ROLE_USER");
+INSERT INTO user_auth (id, authority) values ("admin", "ROLE_USER");
+INSERT INTO user_auth (id, authority) values ("admin", "ROLE_ADMIN");
+
+select 
+u.id, u.password, u.name, a.authority
+from user u, user_auth a
+where u.id = a.id;
+
+select 
+u.id, u.password, u.name, a.authority, ab.authority_name
+from user u, user_auth a, authority ab
+where u.id = a.id and a.authority = ab.authority;
+
+INSERT INTO authority (authority, authority_name) values ("ROLE_USER", "일반사용자");
+INSERT INTO authority (authority, authority_name) values ("ROLE_ADMIN", "관리자");
+*/
+
+-- 영수증 테이블
 CREATE TABLE receipt
 (
   id int NOT NULL AUTO_INCREMENT primary key,

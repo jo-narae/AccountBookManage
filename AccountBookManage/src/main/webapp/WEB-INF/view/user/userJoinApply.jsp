@@ -26,12 +26,9 @@
 				<div class="col-sm-2">
 					<label class="control-label">아이디</label>
 				</div>
-				<div class="col-sm-8">
+				<div class="col-sm-10">
 					<input type="text" class="form-control" id="inputEmail3"
 						placeholder="아이디를 입력해주세요.">
-				</div>
-				<div class="col-sm-2 text-right">
-					<a href="#" class="btn btn-primary">중복체크</a>
 				</div>
 			</div>
 			<div class="form-group">

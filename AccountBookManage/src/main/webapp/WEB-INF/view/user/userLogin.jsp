@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page session="false"%>
+<%@ page session="true"%>
 <ul class="breadcrumb">
 	<li><a href="#">Home</a></li>
 	<li>로그인</li>
@@ -11,13 +11,14 @@
 </h3>
 <div class="row">
 	<div class="col-md-12">
-		<form class="form-horizontal" role="form">
+		<div id="loginFail" value="${loginFail}" style="display:none;"></div>
+		<form class="form-horizontal" role="form" name="loginFrm">
 			<div class="form-group">
 				<div class="col-sm-2">
 					<label for="inputEmail3" class="control-label">아이디</label>
 				</div>
 				<div class="col-sm-10">
-					<input type="text" class="form-control" id="inputEmail3"
+					<input type="text" class="form-control" id="id" name="id"
 						placeholder="아이디를 입력해주세요.">
 				</div>
 			</div>
@@ -26,13 +27,13 @@
 					<label for="inputPassword3" class="control-label">비밀번호</label>
 				</div>
 				<div class="col-sm-10">
-					<input type="password" class="form-control" id="inputPassword3"
+					<input type="password" class="form-control" id="password" name="password"
 						placeholder="비밀번호를 입력해주세요.">
 				</div>
 			</div>
 			<div>
 				<button type="submit" class="btn btn-primary col-sm-12"
-					style="margin-bottom: 5px;">로그인</button>
+					style="margin-bottom: 5px;" onclick="javascript:userLoginCheck();">로그인</button>
 				<button type="submit" class="btn btn-default col-sm-12"
 					style="margin-bottom: 5px;">회원가입</button>
 				<button type="submit" class="btn btn-default col-sm-6">아이디
@@ -40,6 +41,7 @@
 				<button type="submit" class="btn btn-default col-sm-6">비밀번호
 					찾기</button>
 			</div>
+			<input type="hidden" id="_csrf" name="${_csrf.parameterName}" value="${_csrf.token}">
 		</form>
 	</div>
 </div>

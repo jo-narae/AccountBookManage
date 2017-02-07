@@ -13,19 +13,6 @@ import org.springframework.web.servlet.ModelAndView;
 public class NaraeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
-	
-	/**
-	 * 내정보 화면
-	 * @return
-	 */
-	@RequestMapping("user/userLogin.do")
-	public ModelAndView testUI1() {
-		ModelAndView mv = new ModelAndView("user/userLogin");
-		mv.addObject("active_menu", "user");
-		mv.addObject("page_name", "userLogin");
-
-		return mv;
-	}
 
 	@RequestMapping("user/userJoinApply.do")
 	public ModelAndView testUI2() { 
