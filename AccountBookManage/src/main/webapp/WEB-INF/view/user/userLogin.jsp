@@ -9,6 +9,7 @@
 <h3 class="text-primary">
 	<b>로그인</b>
 </h3>
+<input type="hidden" id="login_fail" value="${loginFail}" />
 <div class="row">
 	<div class="col-md-12">
 		<div id="loginFail" value="${loginFail}" style="display:none;"></div>

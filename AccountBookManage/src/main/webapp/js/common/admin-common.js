@@ -2,11 +2,6 @@
  * 공통
  */
 
-//init
-window.onload = function () {
-	location.replace="";
-}
-
 //로그인
 function sessionLogin() {
 	location.href = "../../user/userLogin.do";

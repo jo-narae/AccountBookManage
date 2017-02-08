@@ -1,4 +1,16 @@
-//로그인 유효성 체크
+/**
+ * 로그인 화면
+ */
+
+//로그인 실패시 처리
+window.onload = function () {
+	var login_fail = document.getElementById("login_fail").value;
+	if(login_fail) {
+		alert("로그인 정보가 틀렸습니다. 다시 입력해주세요.");
+	}
+}
+
+//로그인
 function userLoginCheck() {
 	var frm = document.loginFrm
 	var user_id = frm.id.value;

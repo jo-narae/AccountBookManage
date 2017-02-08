@@ -38,39 +38,7 @@ public class UserController {
 	UserService userService;
 	
 	/**
-	 * 로그인 화면
-	 * @return mv
+	 * 앞으로 이 컨트롤러는 사용자에 관해
+	 * 회원가입을 하거나 유저 정보를 변경 혹은 조회, 권한 처리를 할 예정입니다.
 	 */
-	@RequestMapping("user/userLogin.do")
-	public ModelAndView userLogin() {
-		ModelAndView mv = new ModelAndView("user/userLogin");
-		mv.addObject("active_menu", "user");
-		mv.addObject("page_name", "userLogin");
-
-		return mv;
-	}
-	
-	/**
-	 * 세션 로그인
-	 * @return mv
-	 */
-	@RequestMapping(value="user/sessionLogin.do", method=RequestMethod.POST)
-	public ModelAndView sessionLogin (@ModelAttribute("loginFrm") LoginDTO loginFrm, HttpServletRequest request, HttpServletResponse response) {
-		ModelAndView mv = new ModelAndView();
-		return mv;
-	}
-	
-	/**
-	 * 세션 로그아웃
-	 * @return String
-	 */
-	@RequestMapping("sessionLogout.do")
-	public String sessionLogout (HttpServletRequest request, HttpServletResponse response) {
-	    Authentication auth = SecurityContextHolder.getContext().getAuthentication();
-	    if (auth != null){    
-	        new SecurityContextLogoutHandler().logout(request, response, auth);
-	    }
-	    return "redirect:/";
-	}
-
 }
