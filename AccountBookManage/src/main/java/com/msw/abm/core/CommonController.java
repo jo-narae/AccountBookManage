@@ -7,12 +7,8 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-
-import com.msw.abm.dto.LoginDTO;
 
 /**
  * Handles requests for the application home page.
@@ -39,16 +35,6 @@ public class CommonController {
 		return mv;
 	}
 
-	/**
-	 * 세션 로그인
-	 * @return mv
-	 */
-	@RequestMapping(value="user/sessionLogin.do", method=RequestMethod.POST)
-	public ModelAndView sessionLogin (@ModelAttribute("loginFrm") LoginDTO loginFrm, HttpServletRequest request, HttpServletResponse response) {
-		ModelAndView mv = new ModelAndView();
-		return mv;
-	}
-	
 	/**
 	 * 세션 로그아웃
 	 * @return String

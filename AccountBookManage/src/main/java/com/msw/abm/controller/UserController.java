@@ -23,7 +23,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.msw.abm.vo.UserVO;
-import com.msw.abm.dto.LoginDTO;
 import com.msw.abm.service.UserService;
 
 /**
