@@ -12,32 +12,25 @@
 </h3>
 <div class="row">
 	<div class="col-md-12">
-		<form class="form-horizontal" role="form">
-			<div class="form-group">
-				<div class="col-sm-2">
-					<label class="control-label">이름</label>
-				</div>
-				<div class="col-sm-10">
-					<input type="text" class="form-control" id="inputEmail3"
-						placeholder="이름을 입력해주세요.">
-				</div>
-			</div>
+		<form class="form-horizontal" role="form" name="joinFrm">
 			<div class="form-group">
 				<div class="col-sm-2">
 					<label class="control-label">아이디</label>
 				</div>
 				<div class="col-sm-10">
-					<input type="text" class="form-control" id="inputEmail3"
+					<input type="text" class="form-control" id="id"
 						placeholder="아이디를 입력해주세요.">
+					<small class="text-red" id="idText" style="display:none;">아이디를 입력해주세요.</small>
 				</div>
 			</div>
 			<div class="form-group">
 				<div class="col-sm-2">
-					<label class="control-label">연락처</label>
+					<label class="control-label">이름</label>
 				</div>
 				<div class="col-sm-10">
-					<input type="text" class="form-control" id="inputEmail3"
-						placeholder="연락처를 입력해주세요.">
+					<input type="text" class="form-control" id="name"
+						placeholder="이름을 입력해주세요.">
+					<small class="text-red" id="nameText" style="display:none;">이름을 입력해주세요.</small>
 				</div>
 			</div>
 			<div class="form-group">
@@ -45,8 +38,9 @@
 					<label class="control-label">비밀번호</label>
 				</div>
 				<div class="col-sm-10">
-					<input type="password" class="form-control" id="inputEmail3"
+					<input type="password" class="form-control" id="password"
 						placeholder="비밀번호를 입력해주세요.">
+					<small class="text-red" id="passwordText" style="display:none;">비밀번호를 입력해주세요.</small>
 				</div>
 			</div>
 			<div class="form-group">
@@ -54,8 +48,19 @@
 					<label class="control-label">비밀번호 확인</label>
 				</div>
 				<div class="col-sm-10">
-					<input type="password" class="form-control" id="inputEmail3"
+					<input type="password" class="form-control" id="password_check"
 						placeholder="비밀번호 확인을 입력해주세요.">
+					<small class="text-red" id="passwordCheckText" style="display:none;">비밀번호 확인을 입력해주세요.</small>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-sm-2">
+					<label class="control-label">연락처</label>
+				</div>
+				<div class="col-sm-10">
+					<input type="text" class="form-control" id="phone_number"
+						placeholder="연락처를 입력해주세요.">
+					<small class="text-red" id="phoneText" style="display:none;">연락처를 입력해주세요.</small>
 				</div>
 			</div>
 			<div class="form-group">
@@ -63,8 +68,9 @@
 					<label class="control-label">e-mail</label>
 				</div>
 				<div class="col-sm-10">
-					<input type="email" class="form-control" id="inputEmail3"
-						placeholder="e-mail을 입력해주세요.">
+					<input type="email" class="form-control" id="email"
+						placeholder="이메일을 입력해주세요.">
+					<small class="text-red" id="emailText" style="display:none;">이메일을 입력해주세요.</small>
 				</div>
 			</div>
 			<div class="form-group">
@@ -72,21 +78,18 @@
 					<label class="control-label">기수</label>
 				</div>
 				<div class="col-sm-10">
-					<div class="btn-group">
-						<a class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-							11기 <span class="fa fa-caret-down"></span>
-						</a>
-						<ul class="dropdown-menu text-center" role="menu">
-							<li>11기</li>
-							<li>12기</li>
-							<li>13기</li>
-							<li>14기</li>
-						</ul>
-					</div>
+					<select class="form-control" id="cardinal_number">
+						<option>전체</option>
+						<c:forEach var="cardinal" items="${cardinalList}">
+							<option value="${cardinal.cardinal_number}">${cardinal.cardinal_number}</option>
+						</c:forEach>
+					</select>
+					<small class="text-red" id="cardinalText" style="display:none;">기수를 선택해주세요.</small>
 				</div>
 			</div>
 			<div>
-				<button type="submit" class="btn btn-primary col-sm-12">가입신청</button>
+				<a class="btn btn-primary col-sm-12"
+					style="margin-bottom: 5px;" href="javascript:validationCheck();">가입신청</a>
 			</div>
 		</form>
 	</div>

@@ -15,19 +15,12 @@ public class UserServiceImpl implements UserService {
 	private UserDAO userDAO;
 	
 	/**
-	 * 일반 로그인
-	 * @param id 아이디
-	 * @param password 비밀번호
+	 * 현재 기수현황 조회
 	 * @return List<UserVO>
 	 */
 	@Override
-	public List<UserVO> sessionLogin(String id, String password) {
-		UserVO uv = new UserVO();
-
-		uv.setId(id);
-		uv.setPassword(password);
-
-		return userDAO.sessionLogin(uv);
+	public List<UserVO> cardinalList() {
+		return userDAO.cardinalList();
 	}
 
 }

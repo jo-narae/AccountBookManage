@@ -16,16 +16,15 @@ public class UserDAOImpl implements UserDAO {
 	private SqlSession sqlSession;
 
 	/**
-	 * 일반 로그인
-	 * @param UserVO
+	 * 현재 기수현황 조회
 	 * @return List<UserVO>
 	 */
 	@Override
-	public List<UserVO> sessionLogin(UserVO uv) {
+	public List<UserVO> cardinalList() {
 		List<UserVO> result;
 		UserMapper resultMapper = sqlSession.getMapper(UserMapper.class);
 
-		result = resultMapper.sessionLogin(uv);
+		result = resultMapper.cardinalList();
 
 		return result;
 	}

@@ -36,7 +36,7 @@
 				<a class="btn btn-primary col-sm-12"
 					style="margin-bottom: 5px;" href="javascript:userLoginCheck();">로그인</a>
 				<a class="btn btn-default col-sm-12"
-					style="margin-bottom: 5px;">회원가입</a>
+					style="margin-bottom: 5px;" href="javascript:userJoinApply();">회원가입</a>
 				<a class="btn btn-default col-sm-6">아이디
 					찾기</a>
 				<a class="btn btn-default col-sm-6">비밀번호

@@ -7,11 +7,9 @@ import com.msw.abm.vo.UserVO;
 public interface UserService {
 	
 	/**
-	 * 일반 로그인
-	 * @param id 아이디
-	 * @param password 비밀번호
+	 * 현재 기수현황 조회
 	 * @return List<UserVO>
 	 */
-	public List<UserVO> sessionLogin(String id, String password);
+	public List<UserVO> cardinalList();
 	
 }

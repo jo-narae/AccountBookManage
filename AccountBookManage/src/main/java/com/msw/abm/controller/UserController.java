@@ -37,11 +37,16 @@ public class UserController {
 	@Autowired
 	UserService userService;
 	
+	/**
+	 * 회원가입 신청 페이지 요청
+	 * @return mv
+	 */
 	@RequestMapping("user/userJoinApply.do")
 	public ModelAndView userJoinApply() { 
 		ModelAndView mv = new ModelAndView("user/userJoinApply");
 		mv.addObject("active_menu", "user");
 		mv.addObject("page_name", "userJoinApply");
+		mv.addObject("cardinalList", userService.cardinalList());
 
 		return mv;
 	}

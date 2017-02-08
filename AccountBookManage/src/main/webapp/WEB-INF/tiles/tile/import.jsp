@@ -10,6 +10,7 @@
 <script type="text/javascript" src="../js/common/bootstrap.min.js"></script>
 <script type="text/javascript" src="${custom_js_src}"></script>
 <script type="text/javascript" src="../js/common/common.js"></script>
+<script type="text/javascript" src="../js/common/utill.js"></script>
 <link href="../css/common.css" rel="stylesheet" type="text/css">
 <link href="../css/bootstrap.css" rel="stylesheet" type="text/css">
 <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css">

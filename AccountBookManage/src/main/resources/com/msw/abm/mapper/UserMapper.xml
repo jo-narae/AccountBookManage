@@ -16,20 +16,10 @@
 		<result property="enable" column="enable" />	
 	</resultMap>
 
-	<!-- 일반 로그인 -->
-	<select id="sessionLogin" resultMap="UserMap">
-	    SELECT user.id
-	         , user.name
-	         , user.password
-	         , user.phone_number
-	         , user.email
-	         , user.cardinal_number
-	         , auth.authority
-	         , user.enable
-	      FROM user as user, user_auth as auth
-	     WHERE user.id = #{id}
-	       AND user.password = #{password}
-	       AND user.id = auth.id
+	<!-- 현재 기수현황 조회 -->
+	<select id="cardinalList" resultMap="UserMap">
+	    SELECT cardinal_number FROM cardinal
+		ORDER BY id DESC LIMIT 4
 	</select>
 
 </mapper>
