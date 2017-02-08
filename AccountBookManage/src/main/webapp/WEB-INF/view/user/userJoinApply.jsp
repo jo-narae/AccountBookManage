@@ -10,6 +10,13 @@
 <h3 class="text-primary">
 	<b>회원가입 신청</b>
 </h3>
+<input type="hidden" id="idPass" value="false" />
+<input type="hidden" id="namePass" value="false" />
+<input type="hidden" id="passwordPass" value="false" />
+<input type="hidden" id="passwordCheckPass" value="false" />
+<input type="hidden" id="phonePass" value="false" />
+<input type="hidden" id="emailPass" value="false" />
+<input type="hidden" id="cardinalPass" value="false" />
 <div class="row">
 	<div class="col-md-12">
 		<form class="form-horizontal" role="form" name="joinFrm">

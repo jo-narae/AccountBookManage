@@ -66,7 +66,8 @@ public class UserController {
 		
 		if(!id.equals("")) {
 			mv.addObject("idCount", userService.idOverlapCheck(id));
-		} else if(!email.equals("")) {
+		}
+		if(!email.equals("")) {
 			mv.addObject("emailCount", userService.emailOverlapCheck(email));
 		}
 

@@ -14,14 +14,14 @@ function validationCheck() {
 	var cardinalNumber = document.getElementById("cardinal_number");
 	cardinalNumber = cardinalNumber.options[cardinalNumber.selectedIndex].value;	//기수
 	
+	//영역 검사하기 위한 배열 배치
 	var idArray = ["idText", "nameText", "passwordText", "passwordCheckText", "phoneText", "emailText", "cardinalText"];
 	var valueArray = [id, name, password, passwordCheck, phoneNumber, email, cardinalNumber];
+	var passArray = ["idPass", "namePass", "passwordPass", "passwordCheckPass", "phonePass", "emailPass", "cardinalPass"];
 
 	//데이터 값 없는지 체크
-	var JSONData = JSONCreate(idArray, valueArray);
-	
-	for (var item in JSONData) {
-		messageDisplay(JSONData[item].value, JSONData[item].id)
+	for (var item in idArray) {
+		messageDisplay(valueArray[item], idArray[item], passArray[item]);
 	}
 	
 	//비밀번호 체크
@@ -30,8 +30,31 @@ function validationCheck() {
 	//중복 체크
 	overlapCheck(id, email);
 
+	//회원 가입
+	if(validationSuccessCheck(passArray)) {
+		//유효성 체크 성공 로직
+	}
 }
 
+//안내 메세지 감추거나 보이기
+function messageDisplay(_value, _id, _pass) {
+	messageReset();
+	messageHide(_value, _id, _pass);
+	messageShow(_value, _id, _pass);
+}
+
+//비밀번호 체크
+function passwordValidationCheck(_password, _passwordCheck) {	
+	if((_password != "" && _passwordCheck != "") && (_password != _passwordCheck)) { //비밀번호와 비밀번호 확인이 일치하지 않을 경우
+			document.getElementById("passwordCheckText").innerHTML = "비밀번호와 다릅니다. 비밀번호를 다시 확인해주세요.";
+			document.getElementById("passwordCheckText").style.display = "block";
+	}
+	if((_password != "" && _passwordCheck != "") && (_password == _passwordCheck)) {
+		document.getElementById("passwordCheckPass").value = true;
+	}
+}
+
+//중복 체크
 function overlapCheck(_id, _email) {
 	var JSONData = "{ \"id\" : \"" + _id + "\", \"email\" : \"" + _email + "\" }";
 	JSONData = JSON.parse(JSONData);
@@ -63,19 +86,22 @@ function overlapCheck(_id, _email) {
 	});
 }
 
-//안내 메세지 감추거나 보이기
-function messageDisplay(_value, _id) {
-	messageReset();
-	messageHide(_value, _id);
-	messageShow(_value, _id);
-}
+//유효성 완료 검사
+function validationSuccessCheck(_passArray) {
+	var itemLength = _passArray.length;
+	var loginPass = false; // true일 경우 유효성 체크 통과, false일 경우 실패
 
-//비밀번호 체크
-function passwordValidationCheck(_password, _passwordCheck) {	
-	if((_password != "" && _passwordCheck != "") && (_password != _passwordCheck)) { //비밀번호와 비밀번호 확인이 일치하지 않을 경우
-			document.getElementById("passwordCheckText").innerHTML = "비밀번호와 다릅니다. 비밀번호를 다시 확인해주세요.";
-			document.getElementById("passwordCheckText").style.display = "block";
+	for (var item = 0; item < itemLength; item++) {
+		var _id = _passArray[item].toString();
+		if(document.getElementById(_id).value == "true") { //유효성 완료 검사
+			loginPass = true;
+		} else {
+			loginPass = false;
+			break;
+		}
 	}
+
+	return loginPass;
 }
 
 //중복 메세지
@@ -95,10 +121,12 @@ function useableMessage(_id, _value) {
 	if(_id == "idText" && _value != "") {
 		document.getElementById("idText").innerHTML = "아이디를 사용하셔도 됩니다.";
 		document.getElementById("idText").style.display = "block";
+		document.getElementById("idPass").value = true;
 	}
 	if(_id == "emailText" && _value != "") {
 		document.getElementById("emailText").innerHTML = "이메일을 사용하셔도 됩니다.";
 		document.getElementById("emailText").style.display = "block";
+		document.getElementById("emailPass").value = true;
 	}
 }
 
@@ -107,30 +135,38 @@ function messageReset() {
 	document.getElementById("idText").innerHTML = "아이디를 입력해주세요.";
 	document.getElementById("passwordCheckText").innerHTML = "비밀번호 확인을 입력해주세요.";
 	document.getElementById("emailText").innerHTML = "이메일을 입력해주세요.";
+	
+	document.getElementById("idPass").value = false;
+	document.getElementById("passwordCheckPass").value = false;
+	document.getElementById("emailPass").value = false;
 }
 
 //안내 메세지 감추기
-function messageHide(_value, _id) {
+function messageHide(_value, _id, _pass) {
 	if(_id == "cardinalText") {
 		if (_value != "전체") {
 			document.getElementById(_id).style.display = "none";
+			document.getElementById(_pass).value = true;
 		}
 		return;
 	}
 	if (_value != "") {
 		document.getElementById(_id).style.display = "none";
+		document.getElementById(_pass).value = true;
 	}
 }
 
 //안내 메세지 보이기
-function messageShow(_value, _id) {
+function messageShow(_value, _id, _pass) {
 	if(_id == "cardinalText") {
 		if (_value == "전체") {
 			document.getElementById(_id).style.display = "block";
+			document.getElementById(_pass).value = false;
 		}
 		return;
 	}
 	if (_value == "") {
 		document.getElementById(_id).style.display = "block";
+		document.getElementById(_pass).value = false;
 	}
 }
