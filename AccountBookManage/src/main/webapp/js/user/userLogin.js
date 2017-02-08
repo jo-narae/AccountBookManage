@@ -23,8 +23,6 @@ function userLoginCheck() {
 		alert("비밀번호를 입력해주세요.");
 		return;
 	} else {
-		frm.action="sessionLogin.do";//이동할 페이지
-		frm.method="post";//POST방식
 		frm.submit();
 	}
 };

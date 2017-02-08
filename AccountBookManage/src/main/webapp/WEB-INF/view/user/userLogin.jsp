@@ -13,7 +13,7 @@
 <div class="row">
 	<div class="col-md-12">
 		<div id="loginFail" value="${loginFail}" style="display:none;"></div>
-		<form class="form-horizontal" role="form" name="loginFrm">
+		<form class="form-horizontal" role="form" name="loginFrm" method="POST" action="sessionLogin.do">
 			<div class="form-group">
 				<div class="col-sm-2">
 					<label for="inputEmail3" class="control-label">아이디</label>
@@ -33,14 +33,14 @@
 				</div>
 			</div>
 			<div>
-				<button type="submit" class="btn btn-primary col-sm-12"
-					style="margin-bottom: 5px;" onclick="javascript:userLoginCheck();">로그인</button>
-				<button type="submit" class="btn btn-default col-sm-12"
-					style="margin-bottom: 5px;">회원가입</button>
-				<button type="submit" class="btn btn-default col-sm-6">아이디
-					찾기</button>
-				<button type="submit" class="btn btn-default col-sm-6">비밀번호
-					찾기</button>
+				<a class="btn btn-primary col-sm-12"
+					style="margin-bottom: 5px;" href="javascript:userLoginCheck();">로그인</a>
+				<a class="btn btn-default col-sm-12"
+					style="margin-bottom: 5px;">회원가입</a>
+				<a class="btn btn-default col-sm-6">아이디
+					찾기</a>
+				<a class="btn btn-default col-sm-6">비밀번호
+					찾기</a>
 			</div>
 			<input type="hidden" id="_csrf" name="${_csrf.parameterName}" value="${_csrf.token}">
 		</form>
