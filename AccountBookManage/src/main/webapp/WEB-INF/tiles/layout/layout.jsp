@@ -6,9 +6,8 @@
 <html>
   
   <head>
-
-  </head>
 	<tiles:insertAttribute name="import" />
+  </head>
   <body>
     <div class="navbar navbar-default navbar-static-top">
 		<tiles:insertAttribute name="header" />

@@ -2,7 +2,6 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ page session="false" %>
 <html>
-  
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,7 +21,7 @@
             <h1>Account Book Manage</h1>
             <p>모바일소프트웨어학과의 장부관리 사이트입니다.</p>
             <br>
-            <a class="btn btn-primary" style="width:800px;" onClick="loginPageRedirect();">시작하기</a>
+            <a class="btn btn-primary" style="width:800px;" onClick="initPageRedirect();">시작하기</a>
           </div>
         </div>
       </div>

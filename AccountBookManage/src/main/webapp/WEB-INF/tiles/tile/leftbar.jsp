@@ -33,13 +33,6 @@
 		<h3 class="text-primary"><i class="fa fa-cog"></i>권한관리</h3>
 	</c:when>
 	<c:otherwise>
-		<h3 class="text-primary"><i class="fa fa-home"></i>Home</h3>
-		<nav class="navbar navbar-default navbar-fixed-side">
-		  <!-- normal collapsible navbar markup -->
-		  <ol class="list-unstyled col-md-12 bottom_padding_10 top_padding_10">
-		    <li>로그인</li>
-		    <li>회원가입</li>
-		  </ol>
-		</nav>
+		<h3 class="text-primary"><i class="fa fa-exclamation-triangle"></i>에러 페이지</h3>
 	</c:otherwise>
 </c:choose>

@@ -11,15 +11,22 @@
 	">
 	
 	<http auto-config="true">
+		<!-- 접근 권한 없을 경우 -->
+		<access-denied-handler error-page="/errorRequest.do" />
+		<!-- 접근 제어 -->
+		<intercept-url pattern="/user/**" access="isAnonymous()" />
 		<intercept-url pattern="/accountbook/**" access="hasRole('ROLE_USER')" />
 		<intercept-url pattern="/mypage/**" access="hasRole('ROLE_USER')" />
 		<intercept-url pattern="/withdraw/**" access="hasRole('ROLE_USER')" />
 		<intercept-url pattern="/admin/**/**" access="hasRole('ROLE_ADMIN')" />
+		<!-- 세션 로그인 설정 -->
 		<form-login login-page="/user/userLogin.do" authentication-failure-url="/user/userLogin.do"
 			login-processing-url="/user/sessionLogin.do" always-use-default-target="true"
 			default-target-url="/withdraw/withdrawApplyList.do" username-parameter="id" password-parameter="password" />
+		<!-- 세션 로그아웃 설정 -->
 		<logout delete-cookies="true" logout-success-url="/user/userLogin.do" 
-			logout-url="/user/sessionLogout.do" invalidate-session="true"/>
+			logout-url="/sessionLogout.do" invalidate-session="true"/>
+		<!-- 중복 세션 불허 -->
 		<session-management invalid-session-url="/">
 		<concurrency-control max-sessions="1" expired-url="/user/userLogin.do" />
 		</session-management>

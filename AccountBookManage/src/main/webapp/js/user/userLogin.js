@@ -1,8 +1,3 @@
-//로그인 실패 여부 체크
-window.onload = function () {
-	//onload 영역
-}
-
 //로그인 유효성 체크
 function userLoginCheck() {
 	var frm = document.loginFrm

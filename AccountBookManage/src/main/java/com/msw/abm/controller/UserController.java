@@ -55,37 +55,22 @@ public class UserController {
 	 * @return mv
 	 */
 	@RequestMapping(value="user/sessionLogin.do", method=RequestMethod.POST)
-	public ModelAndView sessionLogin(@ModelAttribute("loginFrm") LoginDTO loginFrm, HttpServletRequest request, HttpServletResponse response) {
-
-		HttpSession session = request.getSession();
-		List<UserVO> userInfo = userService.sessionLogin(loginFrm.getId(), loginFrm.getPassword());
-		System.out.println("test DTO" + loginFrm.getId() + loginFrm.getPassword() + loginFrm.get_csrf());
+	public ModelAndView sessionLogin (@ModelAttribute("loginFrm") LoginDTO loginFrm, HttpServletRequest request, HttpServletResponse response) {
 		ModelAndView mv = new ModelAndView();
-
-		if(userInfo.isEmpty()){ //로그인 실패
-			session.invalidate();
-			mv.setViewName("user/userLogin");
-		} else {
-			mv.addObject("active_menu", "withdraw");
-			mv.addObject("page_name", "withdrawApplyList");
-			
-			// 세션에 유저명 세팅
-			session.setAttribute("USER_NAME", userInfo.get(0).getName());
-		}
-
 		return mv;
 	}
 	
 	/**
-	 * 로그인 화면
-	 * @return mv
+	 * 세션 로그아웃
+	 * @return String
 	 */
-	@RequestMapping("user/sessionLogout.do")
-	public String logoutPage (HttpServletRequest request, HttpServletResponse response) {
+	@RequestMapping("sessionLogout.do")
+	public String sessionLogout (HttpServletRequest request, HttpServletResponse response) {
 	    Authentication auth = SecurityContextHolder.getContext().getAuthentication();
 	    if (auth != null){    
 	        new SecurityContextLogoutHandler().logout(request, response, auth);
 	    }
 	    return "redirect:/";
 	}
+
 }
