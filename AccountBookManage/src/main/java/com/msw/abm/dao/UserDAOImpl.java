@@ -50,7 +50,7 @@ public class UserDAOImpl implements UserDAO {
 	public int emailOverlapCheck(UserVO user) {
 		UserMapper resultMapper = sqlSession.getMapper(UserMapper.class);
 
-		return resultMapper.idOverlapCheck(user);
+		return resultMapper.emailOverlapCheck(user);
 	}
 
 }

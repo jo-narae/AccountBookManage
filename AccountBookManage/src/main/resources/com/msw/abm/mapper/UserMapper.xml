@@ -24,11 +24,11 @@
 	<!-- 아이디 중복체크 -->
     <select id="idOverlapCheck" resultType="int" parameterType="com.msw.abm.vo.UserVO">
         SELECT count(*) TOTALCOUNT FROM user
-        WHERE id = #{id}
+        WHERE ID = #{id}
     </select>
 	<!-- 이메일 중복체크 -->
     <select id="emailOverlapCheck" resultType="int" parameterType="com.msw.abm.vo.UserVO">
         SELECT count(*) TOTALCOUNT FROM user
-        WHERE email = #{email}
+        WHERE EMAIL = #{email}
     </select>
 </mapper>
