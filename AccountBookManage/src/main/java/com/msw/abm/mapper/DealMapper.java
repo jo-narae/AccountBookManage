@@ -12,7 +12,7 @@ public interface DealMapper {
 	 * @param DealVO
 	 * @return ArrayList<DealVO>
 	 */
-	ArrayList<DealVO> findDepositList(DealVO dv);
+	ArrayList<DealVO> findDepositList(DealVO deal);
 
 	/**
 	 * 입금 목록 리스트 총 개수 조회

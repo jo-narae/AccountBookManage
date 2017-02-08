@@ -6,6 +6,8 @@
 
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="_csrf" content="${_csrf.token}"/>
+<meta name="_csrf_header" content="${_csrf.headerName}"/>
 <script type="text/javascript" src="../../js/common/jquery-2.0.3.min.js"></script>
 <script type="text/javascript" src="../../js/common/bootstrap.min.js"></script>
 <script type="text/javascript" src="${custom_js_src}"></script>

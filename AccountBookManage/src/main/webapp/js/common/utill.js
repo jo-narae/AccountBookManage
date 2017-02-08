@@ -3,7 +3,7 @@
  */
 
 //JSON 타입 생성
-function JSONCreate(_valueArray, _idArray) {
+function JSONCreate(_idArray, _valueArray) {
 	var itemLength = _valueArray.length - 1;
 	var lastIndex = itemLength;
 	var JSONData = "[";

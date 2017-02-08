@@ -11,7 +11,7 @@ public interface DealDAO {
 	 * @param pageNum 현재 페이지 수
 	 * @return List<DealVO>
 	 */
-	List<DealVO> findDepositList(DealVO dv);
+	List<DealVO> findDepositList(DealVO deal);
 
 	/**
 	 * 입금 목록 리스트 총 개수 조회

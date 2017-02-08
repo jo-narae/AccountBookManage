@@ -2,6 +2,7 @@ package com.msw.abm.controller;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,10 +17,12 @@ import org.springframework.security.core.authority.AuthorityUtils;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.msw.abm.vo.UserVO;
@@ -51,11 +54,22 @@ public class UserController {
 		return mv;
 	}
 	
-	@RequestMapping("user/userJoinInfo.do")
-	public ModelAndView userJoinInfo() { 
-		ModelAndView mv = new ModelAndView("user/userJoinInfo");
-		mv.addObject("active_menu", "user");
-		mv.addObject("page_name", "userJoinInfo");
+	/**
+	 * 아이디 및 이메일 중복 체크
+	 * @return
+	 */
+	@RequestMapping(value = "user/overlapCheck.ajax", method = RequestMethod.POST)
+	public ModelAndView idCheck(@RequestParam("id") String id, @RequestParam("email") String email,
+			@RequestParam Map<String, Object> paramMap, ModelMap model) {
+		
+		ModelAndView mv = new ModelAndView("jsonView");
+		
+		if(!id.equals("")) {
+			mv.addObject("idCount", userService.idOverlapCheck(id));
+		}
+		if(!email.equals("")) {
+			mv.addObject("emailCount", userService.emailOverlapCheck(email));
+		}
 
 		return mv;
 	}

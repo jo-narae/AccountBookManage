@@ -21,11 +21,11 @@ public class DealDAOImpl implements DealDAO {
 	 * @return List<DealVO>
 	 */
 	@Override
-	public List<DealVO> findDepositList(DealVO dv) {
+	public List<DealVO> findDepositList(DealVO deal) {
 		List<DealVO> result;
 		DealMapper resultMapper = sqlSession.getMapper(DealMapper.class);
 
-		result = resultMapper.findDepositList(dv);
+		result = resultMapper.findDepositList(deal);
 
 		return result;
 	}

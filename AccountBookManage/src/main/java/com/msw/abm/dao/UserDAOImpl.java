@@ -28,6 +28,30 @@ public class UserDAOImpl implements UserDAO {
 
 		return result;
 	}
+	
+	/**
+	 * 아이디 중복체크
+	 * @param UserVO
+	 * @return int
+	 */
+	@Override
+	public int idOverlapCheck(UserVO user) {
+		UserMapper resultMapper = sqlSession.getMapper(UserMapper.class);
+
+		return resultMapper.idOverlapCheck(user);
+	}
+	
+	/**
+	 * 이메일 중복체크
+	 * @param UserVO
+	 * @return int
+	 */
+	@Override
+	public int emailOverlapCheck(UserVO user) {
+		UserMapper resultMapper = sqlSession.getMapper(UserMapper.class);
+
+		return resultMapper.idOverlapCheck(user);
+	}
 
 }
 

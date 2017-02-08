@@ -6,20 +6,29 @@
 
 	<!-- 로그인 처리를 위한 resultMap -->
 	<resultMap id="UserMap" type="com.msw.abm.vo.UserVO">
-		<result property="id" column="id" />
-		<result property="name" column="name" />
-		<result property="password" column="password" />
-		<result property="phone_number" column="phone_number" />
-		<result property="email" column="email" />
-		<result property="cardinal_number" column="cardinal_number" />
-		<result property="authority" column="authority" />
-		<result property="enable" column="enable" />	
+		<result property="id" column="ID" />
+		<result property="name" column="NAME" />
+		<result property="password" column="PASSWORD" />
+		<result property="phone_number" column="PHONE_NUMBER" />
+		<result property="email" column="EMAIL" />
+		<result property="cardinal_number" column="CARDINAL_NUMBER" />
+		<result property="authority" column="AUTHORITY" />
+		<result property="enable" column="ENABLE" />	
 	</resultMap>
 
 	<!-- 현재 기수현황 조회 -->
 	<select id="cardinalList" resultMap="UserMap">
-	    SELECT cardinal_number FROM cardinal
-		ORDER BY id DESC LIMIT 4
+	    SELECT CARDINAL_NUMBER FROM cardinal
+		ORDER BY ID DESC LIMIT 4
 	</select>
-
+	<!-- 아이디 중복체크 -->
+    <select id="idOverlapCheck" resultType="int" parameterType="com.msw.abm.vo.UserVO">
+        SELECT count(*) TOTALCOUNT FROM user
+        WHERE id = #{id}
+    </select>
+	<!-- 이메일 중복체크 -->
+    <select id="emailOverlapCheck" resultType="int" parameterType="com.msw.abm.vo.UserVO">
+        SELECT count(*) TOTALCOUNT FROM user
+        WHERE email = #{email}
+    </select>
 </mapper>

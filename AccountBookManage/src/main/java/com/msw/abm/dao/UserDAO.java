@@ -11,5 +11,19 @@ public interface UserDAO {
 	 * @return List<UserVO>
 	 */
 	public List<UserVO> cardinalList();
+
+	/**
+	 * 아이디 중복체크
+	 * @param UserVO
+	 * @return int
+	 */
+	int idOverlapCheck(UserVO user);
+
+	/**
+	 * 이메일 중복체크
+	 * @param UserVO
+	 * @return int
+	 */
+	int emailOverlapCheck(UserVO user);
 	
 }

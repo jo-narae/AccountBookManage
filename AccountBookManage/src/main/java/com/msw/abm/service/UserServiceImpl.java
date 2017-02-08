@@ -22,5 +22,31 @@ public class UserServiceImpl implements UserService {
 	public List<UserVO> cardinalList() {
 		return userDAO.cardinalList();
 	}
+	
+	/**
+	 * 아이디 중복체크
+	 * @param id
+	 * @return int
+	 */
+	@Override
+	public int idOverlapCheck(String id) {
+		UserVO user = new UserVO();
+		user.setId(id);
+
+		return userDAO.idOverlapCheck(user);
+	}
+	
+	/**
+	 * 이메일 중복체크
+	 * @param id
+	 * @return int
+	 */
+	@Override
+	public int emailOverlapCheck(String email) {
+		UserVO user = new UserVO();
+		user.setEmail(email);
+
+		return userDAO.emailOverlapCheck(user);
+	}
 
 }

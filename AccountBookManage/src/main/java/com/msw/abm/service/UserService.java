@@ -11,5 +11,17 @@ public interface UserService {
 	 * @return List<UserVO>
 	 */
 	public List<UserVO> cardinalList();
+
+	/**
+	 * 아이디 중복체크
+	 * @return int
+	 */
+	int idOverlapCheck(String id);
+
+	/**
+	 * 이메일 중복체크
+	 * @return int
+	 */
+	int emailOverlapCheck(String email);
 	
 }
