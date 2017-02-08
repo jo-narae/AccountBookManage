@@ -34,7 +34,7 @@ public class CommonController {
 	/**
 	 * 에러 페이지 요청
 	 */
-	@RequestMapping("/errorRequest.do")
+	@RequestMapping("errorRequest.do")
 	public String errorPageRequest() {
 		return "redirect:/error/errorPage.do";
 	}
