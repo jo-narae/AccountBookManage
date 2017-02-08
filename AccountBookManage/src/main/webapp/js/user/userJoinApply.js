@@ -83,7 +83,8 @@ function overlapMessage(_id) {
 	if(_id == "idText") {
 		document.getElementById("idText").innerHTML = "아이디가 중복됩니다. 재입력해주세요.";
 		document.getElementById("idText").style.display = "block";
-	} else if(_id == "emailText") {
+	}
+	if(_id == "emailText") {
 		document.getElementById("emailText").innerHTML = "이메일이 중복됩니다. 재입력해주세요.";
 		document.getElementById("emailText").style.display = "block";
 	}
@@ -91,20 +92,13 @@ function overlapMessage(_id) {
 
 //사용가능 메세지
 function useableMessage(_id, _value) {
-	if(_id == "idText") {
-		if(_value != "") {
-			document.getElementById("idText").innerHTML = "아이디를 사용하셔도 됩니다.";
-			document.getElementById("idText").style.display = "block";
-		} else {
-			document.getElementById("idText").innerHTML = "아이디를 입력해주세요.";
-		}
-	} else if(_id == "emailText") {
-		if(_value != "") {
-			document.getElementById("emailText").innerHTML = "이메일을 사용하셔도 됩니다.";
-			document.getElementById("emailText").style.display = "block";
-		} else {
-			document.getElementById("passwordCheckText").innerHTML = "비밀번호 확인을 입력해주세요.";
-		}
+	if(_id == "idText" && _value != "") {
+		document.getElementById("idText").innerHTML = "아이디를 사용하셔도 됩니다.";
+		document.getElementById("idText").style.display = "block";
+	}
+	if(_id == "emailText" && _value != "") {
+		document.getElementById("emailText").innerHTML = "이메일을 사용하셔도 됩니다.";
+		document.getElementById("emailText").style.display = "block";
 	}
 }
 
