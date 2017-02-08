@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.msw.abm.core.CommonController;
 import com.msw.abm.service.DealService;
 
 /**
@@ -19,7 +20,7 @@ import com.msw.abm.service.DealService;
 @Controller
 public class DealController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(HomeController.class);
+	private static final Logger logger = LoggerFactory.getLogger(CommonController.class);
 	
 	@Autowired
 	DealService dealService;
@@ -59,15 +60,14 @@ public class DealController {
 
 		return mv;
 	}
-	
-	
-	
-	@RequestMapping("admin/authority/authorityManage.do")
-	public ModelAndView authorityManage() { 
-		ModelAndView mv = new ModelAndView("admin/authority/authorityManage");
-		mv.addObject("active_menu", "authority");
-		mv.addObject("page_name", "authorityManage");
+
+	@RequestMapping("accountbook/accountBookList.do")
+	public ModelAndView accountBookList() { 
+		ModelAndView mv = new ModelAndView("accountbook/accountBookList");
+		mv.addObject("active_menu", "accountbook");
+		mv.addObject("page_name", "accountBookList");
 
 		return mv;
 	}
+	
 }

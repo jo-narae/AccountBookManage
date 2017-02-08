@@ -3,6 +3,8 @@ package com.msw.abm.core;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
@@ -15,6 +17,19 @@ import org.springframework.web.servlet.ModelAndView;
  */
 @Controller
 public class CommonController {
+	
+	private static final Logger logger = LoggerFactory.getLogger(CommonController.class);
+	
+	/**
+	 * 인트로 페이지
+	 * @return mv
+	 */
+	@RequestMapping("/")
+	public ModelAndView mainRequest () {
+		ModelAndView mv = new ModelAndView("intro");
+
+		return mv;
+	}
 
 	/**
 	 * 에러 페이지 요청
@@ -26,7 +41,7 @@ public class CommonController {
 	
 	/**
 	 * 에러 페이지 응답
-	 * @return String
+	 * @return mv
 	 */
 	@RequestMapping("error/errorPage.do")
 	public ModelAndView errorPageResponse () {
@@ -65,7 +80,7 @@ public class CommonController {
 	 * 로그인 실패
 	 * @param request
 	 * @param response
-	 * @return
+	 * @return mv
 	 */
 	@RequestMapping("/user/loginFailure.do")
 	public ModelAndView loginFailure () {
