@@ -12,7 +12,7 @@ window.onload = function () {
 
 //로그인
 function userLoginCheck() {
-	var frm = document.loginFrm
+	var frm = document.loginForm
 	var user_id = frm.id.value;
 	var user_password = frm.password.value;
 

@@ -1,21 +1,13 @@
 package com.msw.abm.controller;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.authority.AuthorityUtils;
-import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -25,8 +17,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.msw.abm.vo.UserVO;
 import com.msw.abm.core.CommonController;
+import com.msw.abm.dto.JoinDTO;
 import com.msw.abm.service.UserService;
 
 /**
@@ -56,7 +48,7 @@ public class UserController {
 	
 	/**
 	 * 아이디 및 이메일 중복 체크
-	 * @return
+	 * @return json
 	 */
 	@RequestMapping(value = "user/overlapCheck.ajax", method = RequestMethod.POST)
 	public ModelAndView idCheck(@RequestParam("id") String id, @RequestParam("email") String email,
@@ -70,6 +62,28 @@ public class UserController {
 		if(!email.equals("")) {
 			mv.addObject("emailCount", userService.emailOverlapCheck(email));
 		}
+
+		return mv;
+	}
+
+	/**
+	 * 가입신청 정보 확인
+	 * @return mv
+	 */
+	@RequestMapping(value = "user/userJoinInfo.do", method = RequestMethod.POST, produces="text/plain;charset=UTF-8")
+	public ModelAndView userJoinInfo(@ModelAttribute("joinForm") JoinDTO joinForm, HttpServletRequest request,
+			HttpServletResponse response) {
+		ModelAndView mv = new ModelAndView("user/userJoinInfo");
+
+		mv.addObject("active_menu", "user");
+		mv.addObject("page_name", "userJoinComplete");
+		
+		//정보 확인을 위한 모델 값 세팅
+		mv.addObject("id", joinForm.getId());
+		mv.addObject("name", joinForm.getName());
+		mv.addObject("phoneNumber", joinForm.getPhoneNumber());
+		mv.addObject("email", joinForm.getEmail());
+		mv.addObject("cardinalNumber", joinForm.getCardinalNumber());
 
 		return mv;
 	}

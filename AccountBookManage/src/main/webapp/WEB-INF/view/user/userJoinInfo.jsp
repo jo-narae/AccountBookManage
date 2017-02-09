@@ -17,31 +17,31 @@
 				<div class="col-sm-2">
 					<label class="control-label">이름</label>
 				</div>
-				<div class="col-sm-10">조나래</div>
+				<div class="col-sm-10">${name}</div>
 			</div>
 			<div class="form-group" draggable="true">
 				<div class="col-sm-2">
 					<label class="control-label">아이디</label>
 				</div>
-				<div class="col-sm-10">asuka0820</div>
+				<div class="col-sm-10">${id}</div>
 			</div>
 			<div class="form-group">
 				<div class="col-sm-2">
 					<label class="control-label">연락처</label>
 				</div>
-				<div class="col-sm-10">010-4340-6004</div>
+				<div class="col-sm-10">${phoneNumber}</div>
 			</div>
 			<div class="form-group">
 				<div class="col-sm-2">
 					<label class="control-label">e-mail</label>
 				</div>
-				<div class="col-sm-10">asuka0820@gachon.ac.kr</div>
+				<div class="col-sm-10">${email}</div>
 			</div>
 			<div class="form-group">
 				<div class="col-sm-2">
 					<label class="control-label">기수</label>
 				</div>
-				<div class="col-sm-10">11기</div>
+				<div class="col-sm-10">${cardinalNumber}</div>
 			</div>
 			<div>
 				<button type="submit" class="btn btn-primary col-sm-12">정보

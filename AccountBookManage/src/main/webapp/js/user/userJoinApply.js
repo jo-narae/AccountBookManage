@@ -4,7 +4,7 @@
 
 //유효성 체크
 function validationCheck() {
-	var frm = document.joinFrm;
+	var frm = document.joinForm;
 	var id = frm.id.value;															//아이디
 	var name = frm.name.value;														//이름
 	var password = frm.password.value;												//비밀번호
@@ -26,13 +26,13 @@ function validationCheck() {
 	
 	//비밀번호 체크
 	passwordValidationCheck(password, passwordCheck);
-	
+
 	//중복 체크
 	overlapCheck(id, email);
 
 	//회원 가입
 	if(validationSuccessCheck(passArray)) {
-		//유효성 체크 성공 로직
+		frm.submit();
 	}
 }
 
@@ -56,6 +56,14 @@ function passwordValidationCheck(_password, _passwordCheck) {
 
 //중복 체크
 function overlapCheck(_id, _email) {
+	var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/i; //정규식
+	var _emailFormCheck = true;
+	if(!re.test(_email)) {
+		document.getElementById("emailText").innerHTML = "이메일 양식에 맞지 않습니다.";
+		document.getElementById("emailText").style.display = "block";
+		_emailFormCheck = false;
+	}
+	
 	var JSONData = "{ \"id\" : \"" + _id + "\", \"email\" : \"" + _email + "\" }";
 	JSONData = JSON.parse(JSONData);
 	
@@ -80,7 +88,9 @@ function overlapCheck(_id, _email) {
 			if (data.emailCount > 0) { 			//이메일 중복 개수 있을 경우
 				overlapMessage("emailText");
 			} else {							//이메일 중복 개수 없을 경우
-				useableMessage("emailText", _email);
+				if(_emailFormCheck) {
+					useableMessage("emailText", _email);
+				}
 			}
 		}
 	});

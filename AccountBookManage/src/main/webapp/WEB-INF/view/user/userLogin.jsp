@@ -13,7 +13,7 @@
 <div class="row">
 	<div class="col-md-12">
 		<div id="loginFail" value="${loginFail}" style="display:none;"></div>
-		<form class="form-horizontal" role="form" name="loginFrm" method="POST" action="sessionLogin.do">
+		<form class="form-horizontal" role="form" name="loginForm" method="POST" action="sessionLogin.do">
 			<div class="form-group">
 				<div class="col-sm-2">
 					<label for="inputEmail3" class="control-label">아이디</label>

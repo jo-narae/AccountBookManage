@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ page session="false"%>
 <ul class="breadcrumb">
 	<li><a href="#">Home</a></li>
@@ -19,13 +20,13 @@
 <input type="hidden" id="cardinalPass" value="false" />
 <div class="row">
 	<div class="col-md-12">
-		<form class="form-horizontal" role="form" name="joinFrm">
+		<form class="form-horizontal" role="form" name="joinForm" method="POST" action="userJoinInfo.do" >
 			<div class="form-group">
 				<div class="col-sm-2">
 					<label class="control-label">아이디</label>
 				</div>
 				<div class="col-sm-10">
-					<input type="text" class="form-control" id="id"
+					<input type="text" class="form-control" id="id" name="id"
 						placeholder="아이디를 입력해주세요.">
 					<small class="text-red" id="idText" style="display:none;">아이디를 입력해주세요.</small>
 				</div>
@@ -35,7 +36,7 @@
 					<label class="control-label">이름</label>
 				</div>
 				<div class="col-sm-10">
-					<input type="text" class="form-control" id="name"
+					<input type="text" class="form-control" id="name" name="name"
 						placeholder="이름을 입력해주세요.">
 					<small class="text-red" id="nameText" style="display:none;">이름을 입력해주세요.</small>
 				</div>
@@ -45,7 +46,7 @@
 					<label class="control-label">비밀번호</label>
 				</div>
 				<div class="col-sm-10">
-					<input type="password" class="form-control" id="password"
+					<input type="password" class="form-control" id="password" name="password"
 						placeholder="비밀번호를 입력해주세요.">
 					<small class="text-red" id="passwordText" style="display:none;">비밀번호를 입력해주세요.</small>
 				</div>
@@ -65,7 +66,7 @@
 					<label class="control-label">연락처</label>
 				</div>
 				<div class="col-sm-10">
-					<input type="text" class="form-control" id="phone_number"
+					<input type="text" class="form-control" id="phone_number" name="phoneNumber"
 						placeholder="연락처를 입력해주세요.">
 					<small class="text-red" id="phoneText" style="display:none;">연락처를 입력해주세요.</small>
 				</div>
@@ -75,7 +76,7 @@
 					<label class="control-label">e-mail</label>
 				</div>
 				<div class="col-sm-10">
-					<input type="email" class="form-control" id="email"
+					<input type="email" class="form-control" id="email" name="email"
 						placeholder="이메일을 입력해주세요.">
 					<small class="text-red" id="emailText" style="display:none;">이메일을 입력해주세요.</small>
 				</div>
@@ -85,7 +86,7 @@
 					<label class="control-label">기수</label>
 				</div>
 				<div class="col-sm-10">
-					<select class="form-control" id="cardinal_number">
+					<select class="form-control" id="cardinal_number" name="cardinalNumber">
 						<option>전체</option>
 						<c:forEach var="cardinal" items="${cardinalList}">
 							<option value="${cardinal.cardinal_number}">${cardinal.cardinal_number}</option>
@@ -98,6 +99,7 @@
 				<a class="btn btn-primary col-sm-12"
 					style="margin-bottom: 5px;" href="javascript:validationCheck();">가입신청</a>
 			</div>
+			<input type="hidden" id="_csrf" name="${_csrf.parameterName}" value="${_csrf.token}">
 		</form>
 	</div>
 </div>
