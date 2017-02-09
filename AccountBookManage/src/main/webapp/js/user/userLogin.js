@@ -26,8 +26,3 @@ function userLoginCheck() {
 		frm.submit();
 	}
 };
-
-//회원가입
-function userJoinApply() {
-	location.href = "../user/userJoinApply.do";
-}

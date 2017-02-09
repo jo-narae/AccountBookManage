@@ -62,16 +62,18 @@ public class UserServiceImpl implements UserService {
 		userDAO.userJoinSave(user);
 
 		//STEP 2 권한부여
-		userAuthAssign(user);
+		authAssign(user, "ROLE_USER");
 	}
 	
 	/**
-	 * 권한부여(일반사용자)
+	 * 권한부여
 	 * 일반사용자 권한 : ROLE_USER
+	 * 관리자 권한 : ROLE_ADMIN
 	 * @param UserVO
 	 */
-	public void userAuthAssign(UserVO user) {
-		user.setAuthority("ROLE_USER");
+	@Override
+	public void authAssign(UserVO user, String auth) {
+		user.setAuthority(auth);
 		userDAO.authorityAssign(user);
 	}
 

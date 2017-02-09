@@ -31,4 +31,11 @@ public interface UserService {
 	 */
 	public void userJoinSave(UserVO user);
 	
+	/**
+	 * 권한부여
+	 * 일반사용자 권한 : ROLE_USER
+	 * 관리자 권한 : ROLE_ADMIN
+	 * @param UserVO
+	 */
+	public void authAssign(UserVO user, String auth);
 }
