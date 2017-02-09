@@ -118,7 +118,6 @@ public class UserController {
 	public ModelAndView userJoinComplete() { 
 		ModelAndView mv = new ModelAndView("user/userJoinComplete");
 		mv.addObject("active_menu", "user");
-		mv.addObject("page_name", "userJoinComplete");
 
 		return mv;
 	}

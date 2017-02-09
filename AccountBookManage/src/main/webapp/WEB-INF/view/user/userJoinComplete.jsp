@@ -13,9 +13,10 @@
 <div class="row">
 	<div class="col-md-12 text-center">
 		<div class="thumbnail">
-			<img src="../img/join.jpg"><br /> 조나래님 회원가입을 진심으로 축하드립니다.<br />
-			로그인 후 서비스 이용이 가능합니다. 감사합니다.<br /> <a
-				class="btn btn-primary col-sm-12 top_margin_10">메인 페이지로</a>
+			<img src="../img/join.jpg"><br /> 
+			회원가입을 진심으로 축하드립니다.<br />
+			로그인 후 서비스 이용이 가능합니다. 감사합니다.<br />
+			<a class="btn btn-primary col-sm-12" style="margin-top: 10px;" href="javascript:sessionLogin();">사용자 로그인</a>
 		</div>
 	</div>
 </div>
