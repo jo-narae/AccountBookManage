@@ -13,22 +13,31 @@
 		<result property="email" column="EMAIL" />
 		<result property="cardinal_number" column="CARDINAL_NUMBER" />
 		<result property="authority" column="AUTHORITY" />
-		<result property="enable" column="ENABLE" />	
+		<result property="enabled" column="ENABLED" />	
 	</resultMap>
 
 	<!-- 현재 기수현황 조회 -->
 	<select id="cardinalList" resultMap="UserMap">
-	    SELECT CARDINAL_NUMBER FROM cardinal
+	    SELECT CARDINAL_NUMBER FROM CARDINAL
 		ORDER BY ID DESC LIMIT 4
 	</select>
 	<!-- 아이디 중복체크 -->
     <select id="idOverlapCheck" resultType="int" parameterType="com.msw.abm.vo.UserVO">
-        SELECT count(*) TOTALCOUNT FROM user
+        SELECT count(*) TOTALCOUNT FROM USER
         WHERE ID = #{id}
     </select>
 	<!-- 이메일 중복체크 -->
     <select id="emailOverlapCheck" resultType="int" parameterType="com.msw.abm.vo.UserVO">
-        SELECT count(*) TOTALCOUNT FROM user
+        SELECT count(*) TOTALCOUNT FROM USER
         WHERE EMAIL = #{email}
     </select>
+    <!-- 회원가입  -->
+	<insert id="userJoinSave" parameterType="com.msw.abm.vo.UserVO">
+		INSERT INTO USER (ID, NAME, PASSWORD, PHONE_NUMBER, EMAIL, CARDINAL_NUMBER, ENABLED) 
+		VALUES (#{id}, #{name}, #{password}, #{phone_number}, #{email}, #{cardinal_number}, #{enabled});
+	</insert>
+	<!-- 권한부여  -->
+	<insert id="authorityAssign" parameterType="com.msw.abm.vo.UserVO">
+		INSERT INTO USER_AUTH (ID, AUTHORITY) VALUES (#{id}, #{authority});
+	</insert>
 </mapper>

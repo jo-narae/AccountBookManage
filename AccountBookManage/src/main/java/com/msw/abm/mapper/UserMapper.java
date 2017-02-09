@@ -25,4 +25,16 @@ public interface UserMapper {
 	 * @return int
 	 */
 	int emailOverlapCheck(UserVO user);
+
+	/**
+	 * 회원가입
+	 * @param UserVO
+	 */
+	void userJoinSave(UserVO user);
+
+	/**
+	 * 권한부여
+	 * @param UserVO
+	 */
+	void authorityAssign(UserVO user);
 }

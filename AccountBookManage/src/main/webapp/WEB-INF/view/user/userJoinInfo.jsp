@@ -12,7 +12,7 @@
 </h3>
 <div class="row">
 	<div class="col-md-12">
-		<form class="form-horizontal" role="form" name="joinForm" method="POST" action="userJoinReposit.do" >
+		<form class="form-horizontal" role="form" name="joinForm" method="POST" action="userJoinSave.do" >
 			<div class="form-group">
 				<div class="col-sm-2">
 					<label class="control-label">이름</label>
@@ -52,7 +52,7 @@
 			<input type="hidden" id="password" name="password" value="${password}">
 			<input type="hidden" id="phoneNumber" name="phoneNumber" value="${phoneNumber}">
 			<input type="hidden" id="email" name="email" value="${email}">
-			<input type="hidden" id="cardinalNumber" name="name" value="${cardinalNumber}">
+			<input type="hidden" id="cardinalNumber" name="cardinalNumber" value="${cardinalNumber}">
 			<input type="hidden" id="_csrf" name="${_csrf.parameterName}" value="${_csrf.token}">
 		</form>
 	</div>

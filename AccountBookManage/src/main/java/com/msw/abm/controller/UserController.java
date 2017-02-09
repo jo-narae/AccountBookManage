@@ -19,6 +19,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.msw.abm.core.CommonController;
 import com.msw.abm.dto.JoinDTO;
+import com.msw.abm.vo.UserVO;
 import com.msw.abm.service.UserService;
 
 /**
@@ -99,9 +100,13 @@ public class UserController {
 	 * @param response
 	 * @return
 	 */
-	@RequestMapping("user/userJoinReposit.do")
+	@RequestMapping("user/userJoinSave.do")
 	public String userJoinReposit(@ModelAttribute("joinForm") JoinDTO joinForm, HttpServletRequest request,
 			HttpServletResponse response) {
+		
+		UserVO user = transformVO(joinForm);
+
+		userService.userJoinSave(user);
 		return "redirect:/user/userJoinComplete.do";
 	}
 	
@@ -134,6 +139,24 @@ public class UserController {
 		mv.addObject("page_name", "authorityManage");
 
 		return mv;
+	}
+	
+	/**
+	 * DTO 객체를 VO 객체로 변환
+	 * @param joinForm
+	 * @return
+	 */
+	public UserVO transformVO(JoinDTO joinForm) {
+		UserVO user = new UserVO();
+		
+		user.setId(joinForm.getId());
+		user.setName(joinForm.getUserName());
+		user.setPassword(joinForm.getPassword());
+		user.setPhone_number(joinForm.getPhoneNumber());
+		user.setEmail(joinForm.getEmail());
+		user.setCardinal_number(joinForm.getCardinalNumber());
+		
+		return user;
 	}
 	
 }

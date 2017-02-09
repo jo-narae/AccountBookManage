@@ -2,6 +2,7 @@ package com.msw.abm.service;
 
 import java.util.List;
 
+import com.msw.abm.dto.JoinDTO;
 import com.msw.abm.vo.UserVO;
 
 public interface UserService {
@@ -23,5 +24,11 @@ public interface UserService {
 	 * @return int
 	 */
 	int emailOverlapCheck(String email);
+
+	/**
+	 * 회원가입
+	 * @param UserVO
+	 */
+	public void userJoinSave(UserVO user);
 	
 }

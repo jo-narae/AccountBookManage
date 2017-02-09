@@ -25,5 +25,17 @@ public interface UserDAO {
 	 * @return int
 	 */
 	int emailOverlapCheck(UserVO user);
+
+	/**
+	 * 회원가입
+	 * @param UserVO
+	 */
+	public void userJoinSave(UserVO user);
+
+	/**
+	 * 권한부여
+	 * @param UserVO
+	 */
+	public void authorityAssign(UserVO user);
 	
 }

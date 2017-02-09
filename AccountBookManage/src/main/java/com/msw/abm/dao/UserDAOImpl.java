@@ -53,5 +53,25 @@ public class UserDAOImpl implements UserDAO {
 		return resultMapper.emailOverlapCheck(user);
 	}
 
+	/**
+	 * 회원가입
+	 * @param UserVO
+	 */
+	@Override
+	public void userJoinSave(UserVO user) {
+		UserMapper resultMapper = sqlSession.getMapper(UserMapper.class);
+		resultMapper.userJoinSave(user);
+	}
+
+	/**
+	 * 권한부여
+	 * @param UserVO
+	 */
+	@Override
+	public void authorityAssign(UserVO user) {
+		UserMapper resultMapper = sqlSession.getMapper(UserMapper.class);
+		resultMapper.authorityAssign(user);
+	}
+
 }
 
