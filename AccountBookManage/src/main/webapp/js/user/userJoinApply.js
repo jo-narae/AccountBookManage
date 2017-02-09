@@ -6,7 +6,7 @@
 function validationCheck() {
 	var frm = document.joinForm;
 	var id = frm.id.value;															//아이디
-	var name = frm.name.value;														//이름
+	var userName = frm.userName.value;												//이름
 	var password = frm.password.value;												//비밀번호
 	var passwordCheck = frm.password_check.value;									//비밀번호 확인
 	var phoneNumber = frm.phone_number.value;										//연락처
@@ -16,7 +16,7 @@ function validationCheck() {
 	
 	//영역 검사하기 위한 배열 배치
 	var idArray = ["idText", "nameText", "passwordText", "passwordCheckText", "phoneText", "emailText", "cardinalText"];
-	var valueArray = [id, name, password, passwordCheck, phoneNumber, email, cardinalNumber];
+	var valueArray = [id, userName, password, passwordCheck, phoneNumber, email, cardinalNumber];
 	var passArray = ["idPass", "namePass", "passwordPass", "passwordCheckPass", "phonePass", "emailPass", "cardinalPass"];
 
 	//데이터 값 없는지 체크

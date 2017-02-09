@@ -48,6 +48,8 @@ public class UserController {
 	
 	/**
 	 * 아이디 및 이메일 중복 체크
+	 * @param id
+	 * @param email
 	 * @return json
 	 */
 	@RequestMapping(value = "user/overlapCheck.ajax", method = RequestMethod.POST)
@@ -67,7 +69,8 @@ public class UserController {
 	}
 
 	/**
-	 * 가입신청 정보 확인
+	 * 가입신청 정보 확인 페이지 요청
+	 * @param joinForm
 	 * @return mv
 	 */
 	@RequestMapping(value = "user/userJoinInfo.do", method = RequestMethod.POST, produces="text/plain;charset=UTF-8")
@@ -76,18 +79,36 @@ public class UserController {
 		ModelAndView mv = new ModelAndView("user/userJoinInfo");
 
 		mv.addObject("active_menu", "user");
-		mv.addObject("page_name", "userJoinComplete");
-		
+		mv.addObject("page_name", "userJoinInfo");
+
 		//정보 확인을 위한 모델 값 세팅
 		mv.addObject("id", joinForm.getId());
-		mv.addObject("name", joinForm.getName());
+		mv.addObject("userName", joinForm.getUserName());
 		mv.addObject("phoneNumber", joinForm.getPhoneNumber());
+		mv.addObject("password", joinForm.getPassword());
 		mv.addObject("email", joinForm.getEmail());
 		mv.addObject("cardinalNumber", joinForm.getCardinalNumber());
 
 		return mv;
 	}
 	
+	/**
+	 * 회원정보 DB 저장
+	 * @param joinForm
+	 * @param request
+	 * @param response
+	 * @return
+	 */
+	@RequestMapping("user/userJoinReposit.do")
+	public String userJoinReposit(@ModelAttribute("joinForm") JoinDTO joinForm, HttpServletRequest request,
+			HttpServletResponse response) {
+		return "redirect:/user/userJoinComplete.do";
+	}
+	
+	/**
+	 * 회원가입 완료 페이지 요청
+	 * @return
+	 */
 	@RequestMapping("user/userJoinComplete.do")
 	public ModelAndView userJoinComplete() { 
 		ModelAndView mv = new ModelAndView("user/userJoinComplete");

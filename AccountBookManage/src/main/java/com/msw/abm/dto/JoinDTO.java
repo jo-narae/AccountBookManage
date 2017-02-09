@@ -2,7 +2,7 @@ package com.msw.abm.dto;
 
 public class JoinDTO {
 	private String id;
-	private String name;
+	private String userName;
 	private String password;
 	private String phoneNumber;
 	private String email;
@@ -12,10 +12,10 @@ public class JoinDTO {
 
 	}
 
-	public JoinDTO(String id, String name, String password, String phoneNumber, String email, String cardinalNumber) {
-		super();
+	public JoinDTO(String id, String userName, String password, String phoneNumber, String email,
+			String cardinalNumber) {
 		this.id = id;
-		this.name = name;
+		this.userName = userName;
 		this.password = password;
 		this.phoneNumber = phoneNumber;
 		this.email = email;
@@ -30,12 +30,12 @@ public class JoinDTO {
 		this.id = id;
 	}
 
-	public String getName() {
-		return name;
+	public String getUserName() {
+		return userName;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setUserName(String userName) {
+		this.userName = userName;
 	}
 
 	public String getPassword() {

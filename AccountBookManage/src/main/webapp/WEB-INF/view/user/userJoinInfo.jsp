@@ -12,12 +12,12 @@
 </h3>
 <div class="row">
 	<div class="col-md-12">
-		<form class="form-horizontal" role="form">
+		<form class="form-horizontal" role="form" name="joinForm" method="POST" action="userJoinReposit.do" >
 			<div class="form-group">
 				<div class="col-sm-2">
 					<label class="control-label">이름</label>
 				</div>
-				<div class="col-sm-10">${name}</div>
+				<div class="col-sm-10">${userName}</div>
 			</div>
 			<div class="form-group" draggable="true">
 				<div class="col-sm-2">
@@ -44,9 +44,16 @@
 				<div class="col-sm-10">${cardinalNumber}</div>
 			</div>
 			<div>
-				<button type="submit" class="btn btn-primary col-sm-12">정보
-					확인 완료</button>
+				<a class="btn btn-primary col-sm-12"
+					style="margin-bottom: 5px;" href="javascript:joinApplyAgree();">정보 확인 완료</a>
 			</div>
+			<input type="hidden" id="id" name="id" value="${id}">
+			<input type="hidden" id="userName" name="userName" value="${userName}">
+			<input type="hidden" id="password" name="password" value="${password}">
+			<input type="hidden" id="phoneNumber" name="phoneNumber" value="${phoneNumber}">
+			<input type="hidden" id="email" name="email" value="${email}">
+			<input type="hidden" id="cardinalNumber" name="name" value="${cardinalNumber}">
+			<input type="hidden" id="_csrf" name="${_csrf.parameterName}" value="${_csrf.token}">
 		</form>
 	</div>
 </div>

@@ -36,7 +36,7 @@
 					<label class="control-label">이름</label>
 				</div>
 				<div class="col-sm-10">
-					<input type="text" class="form-control" id="name" name="name"
+					<input type="text" class="form-control" id="userName" name="userName"
 						placeholder="이름을 입력해주세요.">
 					<small class="text-red" id="nameText" style="display:none;">이름을 입력해주세요.</small>
 				</div>
