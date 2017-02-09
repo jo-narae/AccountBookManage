@@ -31,13 +31,23 @@
         SELECT count(*) TOTALCOUNT FROM USER
         WHERE EMAIL = #{email}
     </select>
-    <!-- 회원가입  -->
+    <!-- 회원가입 -->
 	<insert id="userJoinSave" parameterType="com.msw.abm.vo.UserVO">
 		INSERT INTO USER (ID, NAME, PASSWORD, PHONE_NUMBER, EMAIL, CARDINAL_NUMBER, ENABLED) 
 		VALUES (#{id}, #{name}, #{password}, #{phone_number}, #{email}, #{cardinal_number}, #{enabled});
 	</insert>
-	<!-- 권한부여  -->
+	<!-- 권한부여 -->
 	<insert id="authorityAssign" parameterType="com.msw.abm.vo.UserVO">
 		INSERT INTO USER_AUTH (ID, AUTHORITY) VALUES (#{id}, #{authority});
 	</insert>
+	<!-- 전체 유저 조회 -->
+	<select id="userListFind" resultMap="UserMap" parameterType="com.msw.abm.vo.UserVO">
+	    SELECT ID, NAME, CARDINAL_NUMBER, PHONE_NUMBER FROM USER
+	    ORDER BY id desc
+			LIMIT #{listSize} OFFSET #{skipCount}
+	</select>
+	<!-- 전체 회원 수 -->
+    <select id="userListCount" resultType="int">
+        SELECT count(*) TOTALCOUNT FROM user
+    </select>
 </mapper>

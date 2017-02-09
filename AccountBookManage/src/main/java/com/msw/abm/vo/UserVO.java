@@ -9,6 +9,8 @@ public class UserVO {
 	private String cardinal_number;
 	private String authority;
 	private boolean enabled;
+	private int skipCount;
+	private int listSize;
 	
 	public String getId() {
 		return id;
@@ -57,6 +59,18 @@ public class UserVO {
 	}
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
+	}
+	public int getSkipCount() {
+		return skipCount;
+	}
+	public void setSkipCount(int skipCount) {
+		this.skipCount = skipCount;
+	}
+	public int getListSize() {
+		return listSize;
+	}
+	public void setListSize(int listSize) {
+		this.listSize = listSize;
 	}
 	
 }

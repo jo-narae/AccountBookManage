@@ -37,4 +37,16 @@ public interface UserMapper {
 	 * @param UserVO
 	 */
 	void authorityAssign(UserVO user);
+
+	/**
+	 * 전체 유저 정보 조회
+	 * @return List<UserVO>
+	 */
+	ArrayList<UserVO> userListFind(UserVO user);
+
+	/**
+	 * 전체 회원 수
+	 * @return int
+	 */
+	int userListCount();
 }

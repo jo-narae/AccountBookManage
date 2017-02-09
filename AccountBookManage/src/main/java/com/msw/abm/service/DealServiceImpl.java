@@ -21,15 +21,15 @@ public class DealServiceImpl implements DealService {
 	 */
 	@Override
 	public List<DealVO> findDepositList(int pageNum) {
-		DealVO dv = new DealVO();
+		DealVO deal = new DealVO();
 		
 		int listSize = 10;
 		int skipCount = (pageNum-1)*listSize;
 		
-		dv.setSkipCount(skipCount);
-		dv.setListSize(listSize);
+		deal.setSkipCount(skipCount);
+		deal.setListSize(listSize);
 
-		return dealDAO.findDepositList(dv);
+		return dealDAO.findDepositList(deal);
 	}
 
 	/**

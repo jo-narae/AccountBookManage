@@ -131,11 +131,20 @@ public class UserController {
 		return mv;
 	}
 
+	/**
+	 * 권한 관리 페이지 요청
+	 * @return
+	 */
 	@RequestMapping("admin/authority/authorityManage.do")
-	public ModelAndView authorityManage() { 
+	public ModelAndView authorityManage(@RequestParam("pageNum") int currentPage, HttpServletRequest request,
+			HttpServletResponse response) {
 		ModelAndView mv = new ModelAndView("admin/authority/authorityManage");
 		mv.addObject("active_menu", "authority");
 		mv.addObject("page_name", "authorityManage");
+
+		mv.addObject("currentPage", currentPage);
+		mv.addObject("userList", userService.userListFind(currentPage));
+		mv.addObject("userListCount", userService.userListCount());
 
 		return mv;
 	}

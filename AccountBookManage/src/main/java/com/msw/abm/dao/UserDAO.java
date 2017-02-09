@@ -37,5 +37,17 @@ public interface UserDAO {
 	 * @param UserVO
 	 */
 	public void authorityAssign(UserVO user);
+
+	/**
+	 * 전체 유저 정보 조회
+	 * @return List<UserVO>
+	 */
+	public List<UserVO> userListFind(UserVO user);
+
+	/**
+	 * 전체 회원 수
+	 * @return int
+	 */
+	public int userListCount();
 	
 }

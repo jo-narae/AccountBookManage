@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.msw.abm.dao.UserDAO;
-import com.msw.abm.dto.JoinDTO;
 import com.msw.abm.vo.UserVO;
 
 @Service
@@ -77,4 +76,28 @@ public class UserServiceImpl implements UserService {
 		userDAO.authorityAssign(user);
 	}
 
+	/**
+	 * 전체 유저 정보 조회
+	 * @return List<UserVO>
+	 */
+	@Override
+	public List<UserVO> userListFind(int pageNum) {
+		UserVO user = new UserVO();
+		int listSize = 10;
+		int skipCount = (pageNum-1)*listSize;
+		
+		user.setSkipCount(skipCount);
+		user.setListSize(listSize);
+
+		return userDAO.userListFind(user);
+	}
+	
+	
+	/**
+	 * 전체 회원 수
+	 * @return int
+	 */
+	public int userListCount() {
+		return userDAO.userListCount();
+	}
 }

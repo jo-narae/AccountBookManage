@@ -73,5 +73,30 @@ public class UserDAOImpl implements UserDAO {
 		resultMapper.authorityAssign(user);
 	}
 
+	/**
+	 * 전체 유저 정보 조회
+	 * @return List<UserVO>
+	 */
+	@Override
+	public List<UserVO> userListFind(UserVO user) {
+		List<UserVO> result;
+		UserMapper resultMapper = sqlSession.getMapper(UserMapper.class);
+
+		result = resultMapper.userListFind(user);
+
+		return result;
+	}
+
+	/**
+	 * 전체 회원 수
+	 * @return int
+	 */
+	@Override
+	public int userListCount() {
+		UserMapper resultMapper = sqlSession.getMapper(UserMapper.class);
+
+		return resultMapper.userListCount();
+	}
+
 }
 

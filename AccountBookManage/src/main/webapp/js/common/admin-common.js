@@ -43,5 +43,5 @@ function myPage() {
 
 //권한 관리
 function authorityManage() {
-	location.href = "../../admin/authority/authorityManage.do";
+	location.href = "../../admin/authority/authorityManage.do?pageNum=1";
 }
