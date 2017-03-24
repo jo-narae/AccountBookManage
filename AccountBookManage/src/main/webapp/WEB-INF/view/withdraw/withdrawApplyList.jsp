@@ -36,7 +36,7 @@
 					</c:when>
 					<c:otherwise>
 						<c:forEach var="apply" items="${withDrawApplyList}">
-			                <tr>
+			                <tr onclick="moveDetailPage(${apply.id});">
 								<td>${apply.id}</td>
 								<td>${apply.user_name}</td>
 								<td>${apply.content}</td>
