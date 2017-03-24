@@ -30,4 +30,19 @@
         SELECT count(*) TOTALCOUNT FROM apply
         WHERE APPLY_TYPE = "STAY"
     </select>
+    
+    <!-- 
+		신청목록 조회
+		미승인 : STAY, 승인 : PERMIT, 반려 : RETURN
+	-->
+	<select id="findWithDrawApplyList" resultMap="ApplyMap" parameterType="com.msw.abm.vo.ApplyVO">
+        SELECT ID, USER_NAME, CONTENT, PRICE, DEPOSIT_ACCOUNT, APPLY_DATE, RECEIPT_ID, 
+        (CASE APPLY_TYPE WHEN 'PERMIT' THEN '승인' WHEN 'RETURN' THEN '반려' ELSE '미승인' END) APPLY_TYPE
+        FROM apply ORDER BY id desc
+			LIMIT #{listSize} OFFSET #{skipCount}
+    </select>
+    <!-- 총 신청목록 개수 -->
+    <select id="withDrawApplyListCount" resultType="int">
+        SELECT count(*) TOTALCOUNT FROM apply
+    </select>
 </mapper>

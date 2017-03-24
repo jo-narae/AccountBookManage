@@ -26,6 +26,13 @@ public class ApplyController {
 	ApplyService applyService;
 	
 	
+	/**
+	 * 출금 관리 목록
+	 * @param currentPage
+	 * @param request
+	 * @param response
+	 * @return
+	 */
 	@RequestMapping("admin/withdraw/withdrawMannageList.do")
 	public ModelAndView withdawMannageList(@RequestParam ("pageNum") int currentPage, HttpServletRequest request, HttpServletResponse response) {
 		ModelAndView mv = new ModelAndView("admin/withdraw/withdrawMannageList");
@@ -35,6 +42,23 @@ public class ApplyController {
 		mv.addObject("currentPage", currentPage);
 		mv.addObject("withdrawMannageList", applyService.findWithdrawMannageList(currentPage));
 		mv.addObject("withdrawMannageListCount", applyService.withdrawMannageListCount());
+
+		return mv;
+	}
+	
+	/**
+	 * 신청 목록
+	 * @return
+	 */
+	@RequestMapping("withdraw/withdrawApplyList.do")
+	public ModelAndView withdrawApplyList(@RequestParam ("pageNum") int currentPage, HttpServletRequest request, HttpServletResponse response) {
+		ModelAndView mv = new ModelAndView("withdraw/withdrawApplyList");
+		mv.addObject("active_menu", "withdraw");
+		mv.addObject("page_name", "withdrawApplyList");
+		
+		mv.addObject("currentPage", currentPage);
+		mv.addObject("withDrawApplyList", applyService.findWithDrawApplyList(currentPage));
+		mv.addObject("withDrawApplyListCount", applyService.withDrawApplyListCount());
 
 		return mv;
 	}
@@ -56,16 +80,7 @@ public class ApplyController {
 
 		return mv;
 	}
-	
-	@RequestMapping("withdraw/withdrawApplyList.do")
-	public ModelAndView withdrawApplyList() {
-		ModelAndView mv = new ModelAndView("withdraw/withdrawApplyList");
-		mv.addObject("active_menu", "withdraw");
-		mv.addObject("page_name", "withdrawApplyList");
 
-		return mv;
-	}
-	
 	@RequestMapping("withdraw/withdrawApplyDetail.do")
 	public ModelAndView withdrawApplyDetail() {
 		ModelAndView mv = new ModelAndView("withdraw/withdrawApplyDetail");

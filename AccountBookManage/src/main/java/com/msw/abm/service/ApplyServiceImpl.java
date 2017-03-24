@@ -38,4 +38,30 @@ public class ApplyServiceImpl implements ApplyService {
 	public int withdrawMannageListCount() {
 		return applyDAO.withdrawMannageListCount();
 	}
+	
+	/**
+	 * 신청 목록 리스트 조회
+	 * @param pageNum 현재 페이지 수
+	 * @return List<ApplyVO>
+	 */
+	@Override
+	public List<ApplyVO> findWithDrawApplyList(int pageNum) {
+		ApplyVO dv = new ApplyVO();
+		
+		int listSize = 10;
+		int skipCount = (pageNum-1)*listSize;
+		
+		dv.setSkipCount(skipCount);
+		dv.setListSize(listSize);
+
+		return applyDAO.findWithDrawApplyList(dv);
+	}
+	/**
+	 * 신청 목록 리스트 총 개수 조회
+	 * @return int
+	 */
+	@Override
+	public int withDrawApplyListCount() {
+		return applyDAO.withDrawApplyListCount();
+	}
 }
