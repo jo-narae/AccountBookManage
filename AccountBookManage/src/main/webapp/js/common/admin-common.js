@@ -28,7 +28,7 @@ function withdrawMannageList() {
 
 //신청 목록
 function withdrawApply() {
-	location.href = "../../withdraw/withdrawApplyList.do";
+	location.href = "../../withdraw/withdrawApplyList.do?pageNum=1";
 }
 
 //금전 출납부
