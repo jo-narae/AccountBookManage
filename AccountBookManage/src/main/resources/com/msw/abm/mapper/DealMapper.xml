@@ -20,6 +20,12 @@
     	입금목록 조회
     	입금 : DEPOSIT, 출금 : WITHDRAW
      -->
+     <select id="findDepositItem" resultMap="DealMap" parameterType="integer">
+        SELECT * FROM deal
+        WHERE id = #{id}
+        
+    </select>
+     
     <select id="findDepositList" resultMap="DealMap" parameterType="com.msw.abm.vo.DealVO">
         SELECT ID, USER_NAME, CONTENT, PRICE, BALANCE, DEAL_DATE FROM deal
         WHERE DEAL_TYPE = "DEPOSIT"

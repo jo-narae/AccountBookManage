@@ -20,4 +20,5 @@ public interface DealMapper {
 	 */
 	int depositListCount();
 
+	ArrayList<DealVO> findDepositItem(int id);
 }

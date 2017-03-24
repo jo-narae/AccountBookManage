@@ -19,4 +19,5 @@ public interface DealDAO {
 	 */
 	int depositListCount();
 	
+	List<DealVO> findDepositItem(int id);
 }

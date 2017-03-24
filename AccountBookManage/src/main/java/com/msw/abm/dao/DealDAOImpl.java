@@ -40,6 +40,17 @@ public class DealDAOImpl implements DealDAO {
 
 		return resultMapper.depositListCount();
 	}
+
+	@Override
+	public List<DealVO> findDepositItem(int id) {
+		// TODO Auto-generated method stub
+		List<DealVO> result;
+		DealMapper resultMapper = sqlSession.getMapper(DealMapper.class);
+
+		result = resultMapper.findDepositItem(id);
+
+		return result;
+	}
 	
 }
 

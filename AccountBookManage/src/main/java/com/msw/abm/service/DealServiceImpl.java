@@ -40,6 +40,13 @@ public class DealServiceImpl implements DealService {
 	public int depositListCount() {
 		return dealDAO.depositListCount();
 	}
+
+	@Override
+	public List<DealVO> findDepositItem(int id) {
+		// TODO Auto-generated method stub
+		return dealDAO.findDepositItem(id);
+	}
 	
+
 
 }

@@ -19,6 +19,7 @@ public interface DealService {
 	 */
 	public int depositListCount();
 	
+	public List<DealVO> findDepositItem(int id);
 
 	
 	

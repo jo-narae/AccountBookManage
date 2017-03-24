@@ -44,10 +44,14 @@ public class DealController {
 	}
 	
 	@RequestMapping("admin/deposit/depositDetail.do")
-	public ModelAndView depositDetail() {
+	public ModelAndView depositDetail(@RequestParam ("seq") int seq, HttpServletRequest request, HttpServletResponse response) {
 		ModelAndView mv = new ModelAndView("admin/deposit/depositDetail");
 		mv.addObject("active_menu", "deposit");
 		mv.addObject("page_name", "depositDetail");
+		
+		
+		mv.addObject("detail", dealService.findDepositItem(seq));
+		
 
 		return mv;
 	}

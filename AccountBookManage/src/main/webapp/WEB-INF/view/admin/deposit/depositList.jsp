@@ -34,7 +34,7 @@
 					</c:when>
 					<c:otherwise>
 						<c:forEach var="deposit" items="${depositList}">
-			                <tr>
+			                <tr onclick="moveDetail(${deposit.id});">
 								<td>${deposit.id}</td>
 								<td>${deposit.user_name}</td>
 								<td>${deposit.content}</td>
