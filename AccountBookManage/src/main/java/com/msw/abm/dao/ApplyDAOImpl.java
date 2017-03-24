@@ -67,4 +67,19 @@ public class ApplyDAOImpl implements ApplyDAO {
 		return resultMapper.withDrawApplyListCount();
 	}
 	
+	/**
+	 * 신청 목록 자세히보기
+	 * @param seq 선택 id
+	 * @return List<ApplyVO>
+	 */
+	@Override
+	public List<ApplyVO> applyDetail(ApplyVO dv) {
+		List<ApplyVO> result;
+		ApplyMapper resultMapper = sqlSession.getMapper(ApplyMapper.class);
+
+		result = resultMapper.applyDetail(dv);
+
+		return result;
+	}
+	
 }

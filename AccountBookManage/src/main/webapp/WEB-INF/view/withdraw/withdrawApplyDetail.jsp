@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <ul class="breadcrumb">
 	<li><a href="#">입/출금 관리</a></li>
 	<li>신청 목록</li>
@@ -11,35 +12,36 @@
 <div class="row">
 	<div class="col-md-12">
 		<form class="form-horizontal" role="form">
+
 			<div class="form-group">
 				<div class="col-sm-2">
 					<label class="control-label">이름</label>
 				</div>
-				<div class="col-sm-10">함민정</div>
+				<div class="col-sm-10">${applyDetail[0].user_name}</div>
 			</div>
 			<div class="form-group">
 				<div class="col-sm-2">
 					<label class="control-label">내역</label>
 				</div>
-				<div class="col-sm-10">A4용지 구매</div>
+				<div class="col-sm-10">${applyDetail[0].content}</div>
 			</div>
 			<div class="form-group">
 				<div class="col-sm-2">
 					<label class="control-label">금액</label>
 				</div>
-				<div class="col-sm-10">3000</div>
+				<div class="col-sm-10">${applyDetail[0].price}</div>
 			</div>
 			<div class="form-group">
 				<div class="col-sm-2">
-					<label class="control-label">구매날짜</label>
+					<label class="control-label">신청날짜</label>
 				</div>
-				<div class="col-sm-10">2017/1/17</div>
+				<div class="col-sm-10">${applyDetail[0].apply_date}</div>
 			</div>
 			<div class="form-group">
 				<div class="col-sm-2">
-					<label class="control-label">입금계좌</label>
+					<label class="control-label">신청상태</label>
 				</div>
-				<div class="col-sm-10">우리 1003-20</div>
+				<div class="col-sm-10">${applyDetail[0].apply_type}</div>
 			</div>
 			<div class="form-group">
 				<div class="col-sm-2">

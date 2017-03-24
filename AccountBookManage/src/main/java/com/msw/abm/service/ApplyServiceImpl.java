@@ -64,4 +64,17 @@ public class ApplyServiceImpl implements ApplyService {
 	public int withDrawApplyListCount() {
 		return applyDAO.withDrawApplyListCount();
 	}
+	/**
+	 * 신청 목록 자세히보기
+	 * @param seq 선택 id
+	 * @return List<ApplyVO>
+	 */
+	@Override
+	public List<ApplyVO> applyDetail(int seq) {
+		ApplyVO dv = new ApplyVO();
+
+		dv.setId(seq);
+
+		return applyDAO.applyDetail(dv);
+	}
 }

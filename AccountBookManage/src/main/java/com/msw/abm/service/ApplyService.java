@@ -8,7 +8,7 @@ public interface ApplyService {
 	/**
 	 * 출금 목록 리스트 조회
 	 * @param pageNum 현재 페이지 수
-	 * @return List<DealVO>
+	 * @return List<ApplyVO>
 	 */
 	public List<ApplyVO> findWithdrawMannageList(int pageNum);
 	/**
@@ -20,7 +20,7 @@ public interface ApplyService {
 	/**
 	 * 신청 목록 리스트 조회
 	 * @param pageNum 현재 페이지 수
-	 * @return List<DealVO>
+	 * @return List<ApplyVO>
 	 */
 	public List<ApplyVO> findWithDrawApplyList(int pageNum);
 	/**
@@ -28,4 +28,11 @@ public interface ApplyService {
 	 * @return int
 	 */
 	public int withDrawApplyListCount();
+	
+	/**
+	 * 신청 목록 자세히보기
+	 * @param seq 선택 id
+	 * @return List<ApplyVO>
+	 */
+	public List<ApplyVO> applyDetail(int seq);
 }

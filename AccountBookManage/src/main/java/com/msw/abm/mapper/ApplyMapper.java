@@ -30,5 +30,12 @@ public interface ApplyMapper {
 	 * @return int
 	 */
 	int withDrawApplyListCount();
+	
+	/**
+	 * 신청 목록 자세히보기
+	 * @param seq 선택 id
+	 * @return List<ApplyVO>
+	 */
+	ArrayList<ApplyVO> applyDetail(ApplyVO dv);
 
 }

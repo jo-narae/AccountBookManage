@@ -28,5 +28,10 @@ public interface ApplyDAO {
 	 * @return int
 	 */
 	int withDrawApplyListCount();
-
+	/**
+	 * 신청 목록 자세히보기
+	 * @param seq 선택 id
+	 * @return List<ApplyVO>
+	 */
+	List<ApplyVO> applyDetail(ApplyVO dv);
 }

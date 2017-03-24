@@ -63,6 +63,21 @@ public class ApplyController {
 		return mv;
 	}
 	
+	/**
+	 * 신청 목록 자세히보기
+	 * @return
+	 */
+	@RequestMapping("withdraw/withdrawApplyDetail.do")
+	public ModelAndView withdrawApplyDetail(@RequestParam ("seq") int seq, HttpServletRequest request, HttpServletResponse response) {
+		ModelAndView mv = new ModelAndView("withdraw/withdrawApplyDetail");
+		mv.addObject("active_menu", "withdraw");
+		mv.addObject("page_name", "withdrawApplyDetail");
+
+		mv.addObject("applyDetail", applyService.applyDetail(seq));
+
+		return mv;
+	}
+	
 	@RequestMapping("withdraw/withdrawApply.do")
 	public ModelAndView withdrawApply() { 
 		ModelAndView mv = new ModelAndView("withdraw/withdrawApply");
@@ -81,13 +96,4 @@ public class ApplyController {
 		return mv;
 	}
 
-	@RequestMapping("withdraw/withdrawApplyDetail.do")
-	public ModelAndView withdrawApplyDetail() {
-		ModelAndView mv = new ModelAndView("withdraw/withdrawApplyDetail");
-		mv.addObject("active_menu", "withdraw");
-		mv.addObject("page_name", "withdrawApplyDetail");
-
-		return mv;
-	}
-	
 }

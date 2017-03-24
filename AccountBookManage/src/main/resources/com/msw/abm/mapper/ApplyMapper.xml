@@ -45,4 +45,11 @@
     <select id="withDrawApplyListCount" resultType="int">
         SELECT count(*) TOTALCOUNT FROM apply
     </select>
+    
+    <!-- 신청 목록 자세히보기 -->
+    <select id="applyDetail" resultMap="ApplyMap" parameterType="com.msw.abm.vo.ApplyVO">
+        SELECT ID, USER_NAME, CONTENT, PRICE, DEPOSIT_ACCOUNT, APPLY_DATE, RECEIPT_ID, 
+        (CASE APPLY_TYPE WHEN 'PERMIT' THEN '승인' WHEN 'RETURN' THEN '반려' ELSE '미승인' END) APPLY_TYPE
+        FROM apply WHERE ID = #{id}
+    </select>
 </mapper>
