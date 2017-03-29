@@ -3,5 +3,5 @@
  */
 //시작하기
 function initPageRedirect() {
-	location.href = "./withdraw/withdrawApplyList.do";
+	location.href = "./withdraw/withdrawApplyList.do?pageNum=1";
 }
